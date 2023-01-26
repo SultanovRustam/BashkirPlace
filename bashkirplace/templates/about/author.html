@@ -1,18 +1,208 @@
-{% extends "base.html" %}
+<!DOCTYPE HTML>
 {% load static %}
-{% block title %}
-  Об авторе проекта
-{% endblock %}
-{% block content %}
-  <div class="container py-5">
-    <h1>Привет, я Рустам</h1>
-    <p>
-    Тут я размещу информацию о себе, используя свои умения верстать.
-    Картинки, блоки, элементы бустрап...
-    Когда раскидаюсь с дедлайном...
-    </p>
-  </div>
-  <div class="container py-5">
-    <img src="{% static 'img/gif/thatsfine.gif' %}">
-  </div>
-{% endblock %}
+<html>
+	<head>
+		<title>Добро пожаловать!</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" href="{% static "img/fav/fav.ico" %}">
+  		<link rel="apple-touch-icon" sizes="180x180" href="{% static "img/fav/apple-touch-icon.png" %}">
+  		<link rel="icon" type="image/png" sizes="32x32" href="{% static "img/fav/favicon-32x32.png" %}">
+  		<link rel="icon" type="image/png" sizes="16x16" href="{% static "img/fav/favicon-16x16.png" %}">
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Добро пожаловать</a></li>
+							<li><a href="#one">Кто мы такие</a></li>
+							<li><a href="#two">Что мы делаем</a></li>
+							<li><a href="#three">Связаться с нами</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>SochiBash</h1>
+							<p>Сайт для башкирской автономии в городе Сочи.</p>
+							<ul class="actions">
+								<li><a href="#one" class="button scrolly">Узнать больше</a></li>
+								<li><a href="{% url 'posts:index' %}" class="button">Перейти к новостям</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src={% static "images/pic01.jpg" %} alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Кто мы такие</h2>
+									<p>Описание кто мы</p>
+									<ul class="actions">
+										<li><a href="{% url 'about:generic' %}" class="button">Узнать больше</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src={% static "images/pic02.jpg" %} alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Что мы делаем</h2>
+									<p>Описание деятельности</p>
+									<ul class="actions">
+										<li><a href="{% url 'about:generic' %}" class="button">Узнать больше</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src={% static "images/pic03.jpg" %} alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Мы живём в Сочи</h2>
+									<p>Замечательный город, полный света и любви!</p>
+									<ul class="actions">
+										<li><a href="{% url 'about:generic' %}" class="button">Узнать больше</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Чем мы занимаемся</h2>
+							<p>Вот список активностей, чем мы занимаемся</p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-code"></span>
+									<h3>Кружки</h3>
+									<p>Описание различных кружков</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-lock"></span>
+									<h3>Походы</h3>
+									<p>Ходим бродим все дела</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3>Просветительская деятельность</h3>
+									<p>Несём культуру в массы</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>Еще чего то там</h3>
+									<p>Заглушка для описания текста</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-link"></span>
+									<h3>Еще чего то там</h3>
+									<p>Заглушка для описания текста</p>
+								</section>
+								<section>
+									<span class="icon major fa-gem"></span>
+									<h3>Еще чего то там</h3>
+									<p>Заглушка для описания текста</p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="{% url 'about:generic' %}" class="button">Узнать больше</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Связаться с нами</h2>
+							<p>Контакты для связи</p>
+							<div class="split style1">
+								<section>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Имя</label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Сообщение</label>
+												<textarea name="message" id="message" rows="5"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><a href="" class="button submit">Отправить сообщение</a></li>
+										</ul>
+									</form>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Адрес</h3>
+											<span>12345 Somewhere Road #654<br />
+											Nashville, TN 00000-0000<br />
+											USA</span>
+										</li>
+										<li>
+											<h3>Email</h3>
+											<a href="#">user@untitled.tld</a>
+										</li>
+										<li>
+											<h3>Телефон</h3>
+											<span>(000) 000-0000</span>
+										</li>
+										<li>
+											<h3>Ссылки</h3>
+											<ul class="icons">
+												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src={% static "assets/js/jquery.min.js" %}></script>
+			<script src={% static "assets/js/jquery.scrollex.min.js" %}></script>
+			<script src={% static "assets/js/jquery.scrolly.min.js" %}></script>
+			<script src={% static "assets/js/browser.min.js" %}></script>
+			<script src={% static "assets/js/breakpoints.min.js" %}></script>
+			<script src={% static "assets/js/util.js" %}></script>
+			<script src={% static "assets/js/main.js" %}></script>
+
+	</body>
+</html>

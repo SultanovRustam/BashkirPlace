@@ -2,13 +2,13 @@ import shutil
 
 from django import forms
 from django.conf import settings
+from django.core.cache import cache
 from django.test import Client, TestCase, override_settings
 from django.urls import reverse
-from django.core.cache import cache
 
-from . import const
 from ..forms import PostForm
 from ..models import Comment, Follow, Group, Post, User
+from . import const
 
 
 @override_settings(MEDIA_ROOT=const.TEMP_MEDIA_ROOT)

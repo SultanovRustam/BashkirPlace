@@ -3,8 +3,8 @@ from http import HTTPStatus
 
 from django.test import Client, TestCase, override_settings
 from django.urls import reverse
-
 from posts.models import Comment, Group, Post, User
+
 from . import const
 
 

@@ -1,7 +1,8 @@
 import tempfile
+
 from django.conf import settings
-from django.urls import reverse
 from django.core.files.uploadedfile import SimpleUploadedFile
+from django.urls import reverse
 
 GROUP_TITLE = "Тестовая группа - 1"
 GROUP_SLUG = "test-slug_1"

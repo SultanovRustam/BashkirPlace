@@ -137,3 +137,6 @@ CACHES = {
         "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
     }
 }
+
+CSRF_TRUSTED_ORIGIN = ['158.160.55.26']
+

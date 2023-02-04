@@ -80,7 +80,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -138,4 +137,4 @@ CACHES = {
     }
 }
 
-CSRF_TRUSTED_ORIGIN = ['158.160.55.26']
+CSRF_TRUSTED_ORIGIN = ['http://158.160.55.26', 'http://sochibash.sytes.net']

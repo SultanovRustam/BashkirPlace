@@ -137,4 +137,4 @@ CACHES = {
     }
 }
 
-CSRF_TRUSTED_ORIGIN = ['http://158.160.55.26']
+CSRF_TRUSTED_ORIGINS = ['http://158.160.55.26', 'http://sochibash.sytes.net']

@@ -1,9 +1,4 @@
-{% extends 'base.html' %}
 {% load thumbnail %}
-{% block title %}
-  Профайл пользователя {{author.username}}
-{% endblock %}
-{% block content %}
 <section class="box">
   <article>
     <h2>{{ profile.fio }}</h2>
@@ -12,7 +7,7 @@
       <img class="image" src="{{ im.url }}">
     {% endthumbnail %}
     </div>
+    <a href="{% url 'meeting:profile_detail' profile.pk %}">подробная информация</a>
     <br>
   </article>
 </section>
-{% endblock %}

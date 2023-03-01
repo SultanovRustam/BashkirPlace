@@ -49,19 +49,20 @@
                             <a href="{% url 'meeting:profile_create' %}">Мой профиль</a>
                         </li>
                         <li>
-                            <a href="{%url 'meeting:profile' 'Rustaveli' %}">
+                            <a href="#">
                         Профиль
                         </a>
                     </ul>
             </li>
             <li>
-            <a href="#">Подменю</a>
+            <a href="#">Расписание</a>
                 <ul>
-                    <li><a href="#">Вариант один</a></li>
-                    <li><a href="#">Вариант два</a></li>
-                    <li><a href="#">Вариант три</a></li>
-                    <li><a href="#">Вариант четыре</a></li>
+                    <li><a href="#">Кружки</a></li>
+                    <li><a href="#">Секция</a></li>
                 </ul>
+            </li>
+                <li>
+            <a href="{% url 'main:contact' %}">Контакты</a>
             </li>
         </ul>
     </nav>

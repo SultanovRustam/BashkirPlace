@@ -59,7 +59,7 @@
                 <a href="{% url 'meeting:index' %}">Знакомства</a>
                     <ul>
                         <li>
-                            <a href="{% url 'meeting:profile_create' %}">Мой профиль</a>
+                            <a href="{% url 'meeting:profile_create' %}">Создать профиль</a>
                         </li>
                         <li>
                             <a href="{%url 'meeting:profile' 'Rustaveli' %}">
@@ -67,15 +67,7 @@
                         </a>
                     </ul>
             </li>
-            <li>
-            <a href="#">Подменю</a>
-                <ul>
-                    <li><a href="#">Вариант один</a></li>
-                    <li><a href="#">Вариант два</a></li>
-                    <li><a href="#">Вариант три</a></li>
-                    <li><a href="#">Вариант четыре</a></li>
-                </ul>
-            </li>
+
         </ul>
 					</nav>
 				</header>
@@ -86,7 +78,9 @@
 					<h2>Башкирская автономия</h2>
 					<p>Сайт для Башкирской автономии в городе Сочи</p>
 					<ul class="actions special">
+						{% if not user.is_authenticated  %}
 						<li><a href="{% url 'users:signup' %}" class="button primary">Зарегистрироваться</a></li>
+						{% endif %}
 						<li><a href="{% url 'news:index' %}" class="button">Последние новости</a></li>
 					</ul>
 				</section>
@@ -111,19 +105,19 @@
 								<p>Узнавайте последние новости о нашей деятельности</p>
 							</section>
 							<section>
-								<span class="icon solid major fa-chart-area accent3"></span>
+								<span class="icon solid major fa-users accent3"></span>
 								<h3>Расписание занятий и кружков</h3>
 								<p>Узнавайте больше о занятиях, секциях и кружках, организуемых нами. </p>
 							</section>
 						</div>
 						<div class="features-row">
 							<section>
-								<span class="icon solid major fa-cloud accent4"></span>
+								<span class="icon solid major fa-camera-retro accent4"></span>
 								<h3>Мероприятия</h3>
 								<p>Узнайте о мероприятиях</p>
 							</section>
 							<section>
-								<span class="icon solid major fa-lock accent5"></span>
+								<span class="icon solid major fa-heart accent2"></span>
 								<h3>Знакомства</h3>
 								<p>Найдите новых друзей.</p>
 							</section>
@@ -135,11 +129,8 @@
 
 							<section class="box special">
 								<span class="image featured"><img src={% static "main/images/pic02.jpg" %} alt="" /></span>
-								<h3>Sed lorem adipiscing</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-								<ul class="actions special">
-									<li><a href="#" class="button alt">Learn More</a></li>
-								</ul>
+								<h3>Открываем новое в привычном</h3>
+								<p></p>
 							</section>
 
 						</div>
@@ -147,11 +138,8 @@
 
 							<section class="box special">
 								<span class="image featured"><img src={% static "main/images/pic03.jpg" %} alt="" /></span>
-								<h3>Accumsan integer</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-								<ul class="actions special">
-									<li><a href="#" class="button alt">Learn More</a></li>
-								</ul>
+								<h3>Объединяемся для общения</h3>
+								<p></p>
 							</section>
 
 						</div>
@@ -159,31 +147,8 @@
 
 				</section>
 
-			<!-- CTA
-				<section id="cta">
-
-					<h2>Sign up for beta access</h2>
-					<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc.</p>
-
-					<form>
-						<div class="row gtr-50 gtr-uniform">
-							<div class="col-8 col-12-mobilep">
-								<input type="email" name="email" id="email" placeholder="Email Address" />
-							</div>
-							<div class="col-4 col-12-mobilep">
-								<input type="submit" value="Sign Up" class="fit" />
-							</div>
-						</div>
-					</form>
-
-				</section>
- -->
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
+		{% include 'includes/footer.html' %}
 
 		</div>
 

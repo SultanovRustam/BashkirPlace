@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {% if is_edit %}
+    Редактировать профиль
+  {% else %}
+    Создать профиль
+  {% endif %}
+{% endblock title %}
+
+{% block content %}
+<section id="main" class="container">
+<header>
+    <h2>
+      {% if is_edit %}
+        Редактировать профиль
+      {% else %}
+        Создать профиль
+      {% endif %}
+    </h2>
+    <p>
+      {% if is_edit %}
+        Страница редактирования профиля
+      {% else %}
+        Страница создания профиля
+      {% endif %}
+    </p>
+  </header>
+  <section class="box">
+  <div class="card-body">
+    {% include 'includes/form_errors.html' %}
+    <form method="post" enctype="multipart/form-data" {% if action_url %} action="{% url action_url %}" {% endif %}>
+    {% csrf_token %}
+    {% for field in form %}
+      {% include 'includes/form_validate.html' %}
+    {% endfor %}
+      <div class="d-flex justify-content-end">
+        <p></p>
+        <button type="submit" class="btn btn-primary">
+          {% if is_edit %}
+            Сохранить
+          {% else %}
+            Добавить
+          {% endif %}
+        </button>
+      </div>
+    </form>
+  </div>
+  </section>
+</section>
+{% endblock %}

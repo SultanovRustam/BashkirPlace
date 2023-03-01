@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+  Войти
+{% endblock %}
+{% block content %}
+<section id="main" class="container">
+  <header>
+    <h2>Войти на сайт</h2>
+    <p>Введите данные своей учётной записи.</p>
+  </header>
+    <section class="box">
+      <form method="post" {% if action_url %} action="{% url action_url %}" {% endif %}>
+        {% csrf_token %}
+        {% for field in form %}
+          {% include 'includes/form_validate.html' %}
+        {% endfor %}
+        <p></p>
+          <div class="col-12" align="center">
+            <button type="submit" class="button alt icon solid fa-check">
+              Войти
+            </button>
+            <a href="{% url 'users:password_reset_form' %}" class="button alt small">
+              Забыли пароль?
+            </a>
+          </div>
+        </form>
+    </section>
+</section>
+{% endblock %}

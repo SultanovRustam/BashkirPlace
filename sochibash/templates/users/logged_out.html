@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+  Вы вышли из системы
+{% endblock %}
+{% block content %}
+{% load static %}
+<section id="main" class="container">
+  <header>
+    <h2>Выход</h2>
+    <p>Вы вышли из своей учётной записи. Ждём вас снова!</p>
+  </header>
+    <section class="box">
+      <span class="image fit"><img src={% static "main/images/pic05.jpg" %} alt="" /></span>
+    </section>
+</section>
+{% endblock %}

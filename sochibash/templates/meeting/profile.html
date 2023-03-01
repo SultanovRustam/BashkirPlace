@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block title %}
+  Профайл пользователя {{author.username}}
+{% endblock %}
+{% block content %}
+<section class="box">
+  <article>
+    <h2>{{ profile.fio }}</h2>
+    <div align="center">
+    {% thumbnail profile.image "960x600" quality=100 as im %}
+      <img class="image" src="{{ im.url }}">
+    {% endthumbnail %}
+    </div>
+    <br>
+  </article>
+</section>
+{% endblock %}

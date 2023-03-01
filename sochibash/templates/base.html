@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		{% block title %}{% endblock title %}
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'main/assets/css/main.css' %}">
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+		{% include 'includes/header.html' %}
+			<div id="wrapper">
+				<section id="main" class="wrapper">
+					{% block content %} Контент не подвезли :( {% endblock %}
+				</section>
+			</div>
+
+		{% include 'includes/footer.html' %}
+	<!-- Scripts -->
+			<script src={% static "main/assets/js/jquery.min.js" %}></script>
+			<script src={% static "main/assets/js/jquery.dropotron.min.js" %}></script>
+			<script src={% static "main/assets/js/jquery.scrollex.min.js" %}></script>
+			<script src={% static "main/assets/js/browser.min.js" %}></script>
+			<script src={% static "main/assets/js/breakpoints.min.js" %}></script>
+			<script src={% static "main/assets/js/util.js" %}></script>
+			<script src={% static "main/assets/js/main.js" %}></script>
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load user_filters %}
+{% load thumbnail %}
+{% block title %}
+  Пользователь {{ profile.FIO|truncatechars:100 }}
+{% endblock %}
+{% block content %}
+<section id="main" class="container">
+<section class="box">
+<article>
+  <h2>{{ profile.fio }}</h2>
+  <div align="center">
+    {% thumbnail profile.image "960x600" quality=100 as im %}
+      <img class="image" src="{{ im.url }}">
+    {% endthumbnail %}
+  </div>
+  <ul>
+    <li>Возраст: {{ profile.age }}</li>
+    <li>Национальность: {{ profile.nationality }}</li>
+    <li>Семейный статус: {{ profile.family_status }}</li>
+    <li>Дети: {{ profile.children }}</li>
+    <li>Дейтельность: {{ profile.activity }}</li>
+  </ul>
+</article>
+
+</section>
+</section>
+{% endblock %}

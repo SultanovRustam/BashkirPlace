@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>Произвольная страница</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'main/assets/css/main.css' %}">
+		<noscript><link rel="stylesheet" href="{% static 'main/assets/css/noscript.css' %}"/></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="{% url 'main:main' %}" class="title">SochiBash</a>
+				<nav>
+					<ul>
+						<li><a href="{% url 'main:main' %}">На главную</a></li>
+						<li><a href="{% url 'main:generic' %}" class="active">Произвольная страница</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Произвольная страница</h1>
+							<span class="image fit"><img src={% static "main/images/pic04.jpg" %} alt="" /></span>
+							<p>Сочи – это российский город на Черном море, популярный пляжный курорт. В 2014 году здесь прошли зимние Олимпийские игры. Одна из основных достопримечательностей города – дендрарий, известный своими пальмами. Кроме того, город славится неоклассическими зданиями XX века, такими как Зимний театр с колоннадой. У подножия Кавказских гор раскинулся национальный парк – лесной массив площадью 1937 квадратных километров. В 70 километрах от моря расположен знаменитый лыжный курорт Красная Поляна.</p>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>SochiBash</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src={% static "main/assets/js/jquery.min.js" %}></script>
+			<script src={% static "main/assets/js/jquery.scrollex.min.js" %}></script>
+			<script src={% static "main/assets/js/jquery.scrolly.min.js" %}></script>
+			<script src={% static "main/assets/js/browser.min.js" %}></script>
+			<script src={% static "main/assets/js/breakpoints.min.js" %}></script>
+			<script src={% static "main/assets/js/util.js" %}></script>
+			<script src={% static "main/assets/js/main.js" %}></script>
+
+	</body>
+</html>

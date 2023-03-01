@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block title %}
+  Профайл пользователя {{author.username}}
+{% endblock %}
+{% block content %}
+  <section id="main" class="container">
+    <header>
+        <h2>Все новости пользователя {{ author.first_name }} {{ author.last_name }}</h2>
+        <p>Всего новостей: {{ author.news.count }}</p>
+    </header>
+    {% for news in page_obj %}
+    <section class="box">
+        <article>
+            <h2>{{ news.title }}</h2>
+        <ul>
+            <li>Дата публикации: {{ news.pub_date|date:"d E Y" }}</li>
+            <li>Автор: <a href="{%url 'news:profile' news.author.username %}">
+            {{ news.author.get_full_name }}
+            </a>
+            </li>
+        </ul>
+        <div align="center">
+            {% thumbnail news.image "960x600" quality=100 as im %}
+                <img class="image" src="{{ im.url }}">
+            {% endthumbnail %}
+        </div>
+        <p>{{ news.text|linebreaks }}</p>
+        <a href="{% url 'news:news_detail' news.pk %}">подробная информация</a>
+        <br>
+        </article>
+    </section>
+    {% if not forloop.last %}
+    <hr>
+    {% endif %}
+    {% endfor %}
+    {% include 'news/includes/paginator.html' %}
+
+{% endblock %}

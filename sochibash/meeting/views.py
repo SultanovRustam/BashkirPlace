@@ -47,3 +47,22 @@ def profile_create(request):
         return redirect('meeting:profile', request.user)
     context['form'] = form
     return render(request, 'meeting/create_profile.html', context)
+
+
+@login_required
+def profile_edit(request, profile_id):
+    profile = get_object_or_404(Profile, id=profile_id)
+    if request.user != profile.author:
+        return redirect('meeting:profile_detail', profile_id)
+    context = {
+        'title': 'Редактировать профиль',
+        'profile': profile,
+        'is_edit': True
+    }
+    form = ProfileForm(request.POST or None, files=request.FILES or None,
+                       instance=profile)
+    if form.is_valid():
+        form.save()
+        return redirect("meeting:profile_detail", profile.id)
+    context["form"] = form
+    return render(request, "meeting/create_profile.html", context)

@@ -62,12 +62,21 @@
                             <a href="{% url 'meeting:profile_create' %}">Создать профиль</a>
                         </li>
                         <li>
-                            <a href="{%url 'meeting:profile' 'Rustaveli' %}">
+                            <a href="#">
                         Профиль
                         </a>
                     </ul>
             </li>
-
+<li>
+            <a href="#">Расписание</a>
+                <ul>
+                    <li><a href="#">Кружки</a></li>
+                    <li><a href="#">Секция</a></li>
+                </ul>
+            </li>
+                <li>
+            <a href="{% url 'main:contact' %}">Контакты</a>
+            </li>
         </ul>
 					</nav>
 				</header>

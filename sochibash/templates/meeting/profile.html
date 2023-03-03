@@ -4,7 +4,7 @@
     <h2>{{ profile.fio }}</h2>
     <div align="center">
     {% thumbnail profile.image "960x600" quality=100 as im %}
-      <img class="image" src="{{ im.url }}">
+      <span class="image featured"><img src="{{ im.url }}"  alt="" /></span>
     {% endthumbnail %}
     </div>
     <a href="{% url 'meeting:profile_detail' profile.pk %}">подробная информация</a>

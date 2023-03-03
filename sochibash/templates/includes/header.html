@@ -45,8 +45,11 @@
             <li>
                 <a href="{% url 'meeting:index' %}">Знакомства</a>
                     <ul>
-                        <li>
-                            <a href="{% url 'meeting:profile_create' %}">Мой профиль</a>
+                        <li>{% if has_profile %}
+                            <a href="{% url 'meeting:profile_edit' profile_id  %}">Редактировать профиль</a>
+                            {% else %}
+                            <a href="{% url 'meeting:profile_create' %}">Создать профиль</a>
+                            {% endif%}
                         </li>
                         <li>
                             <a href="#">

@@ -130,8 +130,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 NEWS_PER_PAGE = 10
 PROFILE_PER_PAGE = 10
-
-LOGIN_REDIRECT_URL = "news:index"
+LOGIN_URL = 'users:login'
+LOGIN_REDIRECT_URL = "main:main"
 
 CACHES = {
     'default': {
@@ -140,3 +140,13 @@ CACHES = {
 }
 
 CSRF_TRUSTED_ORIGINS = ['http://158.160.55.26', 'http://sochibash.sytes.net']
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'SochiBash@yandex.ru'
+EMAIL_HOST_PASSWORD = 'sxgocdvfyqzqbrah'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

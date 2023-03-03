@@ -9,7 +9,7 @@ def has_profile(request):
             'has_profile': True,
             'profile_id': profile[0].id
         }
-    else:
-        return {
-            'has_profile': False
-        }
+
+    return {
+        'has_profile': False
+    }

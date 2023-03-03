@@ -11,7 +11,7 @@
     </ul>
     <div align="center">
     {% thumbnail news.image "1200x720" quality=100 as im %}
-      <span class="image featured"><img src="{{ im.url }}"  alt="" /></span>
+      <span class="image fit"><img src="{{ im.url }}"  alt="" /></span>
     {% endthumbnail %}
     </div>
     <p>{{ news.text|linebreaks }}</p>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Пароль изменён
+{% endblock %}
+{% block content %}
+<section id="main" class="container">
+  <header>
+    <h2>Ошибка доступа</h2>
+    <p>Вы запросили страницу, к которой у вас нет доступа.</p>
+
+  </header>
+  <img src={% static "main/images/403.gif" %}  align="center"alt=""/>
+</section>
+{% endblock %}

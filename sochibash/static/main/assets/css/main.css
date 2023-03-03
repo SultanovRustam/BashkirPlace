@@ -2554,7 +2554,7 @@ body.landing #page-wrapper {
 
 /* Main */
 #main {
-  padding: 4em 0;
+  padding: 0 0;
 }
 #main > header {
   text-align: center;
@@ -2945,7 +2945,7 @@ body.landing #main {
   }
   /* Main */
   #main {
-    padding: 4em 0 0 0;
+    padding:  0 0 0;
   }
   #main > header {
     margin: 0 2em 1.5em 2em;

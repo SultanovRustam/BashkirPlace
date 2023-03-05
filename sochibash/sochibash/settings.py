@@ -144,8 +144,6 @@ CACHES = {
 CSRF_TRUSTED_ORIGINS = ['http://158.160.55.26', 'http://sochibash.sytes.net']
 CSRF_FAILURE_VIEW = 'core.views.csrf_failure'
 
-
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465

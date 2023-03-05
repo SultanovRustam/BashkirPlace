@@ -13,7 +13,7 @@ SECRET_KEY = os.getenv('SECRET_KEY',
                        default='django-insecure-*&k%!*rif!!#wt+=7o)oaa!w&$r^6ni)!v52_@o3s=19hp@1+h')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -136,13 +136,15 @@ LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = "main:main"
 
 CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
     }
 }
 
 CSRF_TRUSTED_ORIGINS = ['http://158.160.55.26', 'http://sochibash.sytes.net']
 CSRF_FAILURE_VIEW = 'core.views.csrf_failure'
+
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'

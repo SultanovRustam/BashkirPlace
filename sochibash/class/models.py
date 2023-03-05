@@ -7,7 +7,7 @@ User = get_user_model()
 class Class(models.Model):
     title = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
-    description=models.TextField("Описание занятия")
+    description = models.TextField("Описание занятия", blank=True)
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,

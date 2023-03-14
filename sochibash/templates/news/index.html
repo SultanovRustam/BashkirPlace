@@ -6,7 +6,7 @@
   <div class="container py-5">
     <h2> {{title}} </h2>
     {% for news in page_obj %}
-      {% include 'includes/news.html' with page='index_page' %}
+      {% include 'news/includes/news.html' with page='index_page' %}
         {% if not forloop.last %}
           <hr>
         {% endif %}

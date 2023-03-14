@@ -94,25 +94,25 @@
 			<!-- Banner -->
 				<section id="banner">
 					<!--<img src={% static "main/images/logo.jfif" %} width="200" height="200" alt="" />-->
-					<h2>Башкирская автономия</h2>
-					<p>Сайт для Башкирской автономии в городе Сочи</p>
-					<ul class="actions special">
-						{% if not user.is_authenticated  %}
-						<li><a href="{% url 'users:signup' %}" class="button primary">Зарегистрироваться</a></li>
-						{% endif %}
-						<li><a href="{% url 'news:index' %}" class="button">Последние новости</a></li>
-					</ul>
+					<h2>Общественная организация местной национально-культурной автономии башкир города-курорта Сочи</h2>
 				</section>
 			<!-- Main -->
 				<section id="main" class="container">
 
 					<section class="box special">
 						<header class="major">
-							<h2>Добро пожаловать на наш сайт
+							<h2>Добро пожаловать!
 							<br />
-							посвященный деятельности нашей автономии</h2>
+							 Рәхим итегеҙ!</h2>
 							<p>Здесь вы можете узнать последние новости, расписание занятий, секций и кружков, а так же оставить найти новых друзей!</p>
+
 						</header>
+						<ul class="actions special">
+							{% if not user.is_authenticated  %}
+							<li><a href="{% url 'users:signup' %}" class="button primary">Зарегистрироваться</a></li>
+							{% endif %}
+							<li><a href="{% url 'news:index' %}" class="button">Последние новости</a></li>
+							</ul>
 						<span class="image featured"><img src={% static "main/images/pic01.jpg" %} alt="" /></span>
 					</section>
 
@@ -121,24 +121,34 @@
 							<section>
 								<span class="icon solid major fa-bolt accent2"></span>
 								<h3>Последние новости</h3>
-								<p>Узнавайте последние новости о нашей деятельности</p>
+
 							</section>
 							<section>
 								<span class="icon solid major fa-users accent3"></span>
-								<h3>Расписание занятий и кружков</h3>
-								<p>Узнавайте больше о занятиях, секциях и кружках, организуемых нами. </p>
+								<h3>План мероприятий</h3>
+
 							</section>
 						</div>
 						<div class="features-row">
 							<section>
 								<span class="icon solid major fa-camera-retro accent4"></span>
-								<h3>Мероприятия</h3>
-								<p>Узнайте о мероприятиях</p>
+								<h3>Расписание кружков, занятий, спортивных секций</h3>
+
 							</section>
 							<section>
 								<span class="icon solid major fa-heart accent2"></span>
+								<h3>Этно - Ярмарка</h3>
+							</section>
+						</div>
+						<div class="features-row">
+							<section>
+								<span class="icon solid major fa-camera-retro accent4"></span>
 								<h3>Знакомства</h3>
-								<p>Найдите новых друзей.</p>
+
+							</section>
+							<section>
+								<span class="icon solid major fa-heart accent2"></span>
+								<h3>Руководство</h3>
 							</section>
 						</div>
 					</section>

@@ -11,19 +11,37 @@
     <section class="box">
       <form method="post" {% if action_url %} action="{% url action_url %}" {% endif %}>
         {% csrf_token %}
+        {% load user_filters %} {# Загружаем фильтры #}
         {% for field in form %}
-          {% include 'includes/form_validate.html' %}
+          <div class="col-6 col-12-narrower">
+            <label for="{{ field.id_for_label }}">
+              {{ field.label }}
+                {% if field.field.required %}
+                  <span class="required text-danger">*</span>
+                {% endif %}
+            </label>
+            {# К полю ввода добавляем атрибут class #}
+            {{ field|addclass:'form-control' }}
+              {% if field.help_text %}
+                <small
+                   id="{{ field.id_for_label }}-help"
+                   class="form-text text-muted"
+                >
+                  {{ field.help_text|safe }}
+                </small>
+              {% endif %}
+          </div>
         {% endfor %}
         <p></p>
-          <div class="col-12" align="center">
-            <button type="submit" class="button alt icon solid fa-check">
+          <div class="col-md-6 offset-md-4" align="center">
+            <button type="submit" class="button special small">
               Войти
             </button>
-            <a href="{% url 'users:password_reset_form' %}" class="button alt small">
+            <a href="{% url 'users:password_reset_form' %}" class="button special small">
               Забыли пароль?
             </a>
           </div>
-        </form>
+      </form>
     </section>
 </section>
 {% endblock %}

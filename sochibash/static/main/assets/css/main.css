@@ -3052,3 +3052,37 @@ body.landing #main {
     padding: 2.5em 1em 3em 1em;
   }
 }/*# sourceMappingURL=main.css.map */
+
+
+.cards{
+  font-size:0;
+  max-width: 790px;
+  margin: 100px auto 50px;
+}
+.card{
+  width:350px;
+  margin-bottom: 60px;
+  padding: 45px 45px 70px;
+  display: inline-block;
+  margin-right: 90px;
+  box-shadow: 4px 4px 4px 5px rgba(50, 50, 250, .1);
+
+}
+
+.card-title{
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight:500
+}
+
+.card-text{
+  font-size: 16px;
+}
+
+.card-image{
+  width: 100%;
+  margin-bottom: 25px;
+}
+.no-right-margin{
+  margin-right:0;
+}

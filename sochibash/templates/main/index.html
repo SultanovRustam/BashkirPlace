@@ -85,8 +85,11 @@
 
                </li>
                 <li>
-            <a href="{% url 'main:contact' %}">Контакты</a>
-            </li>
+            		<a href="{% url 'main:contact' %}">Контакты</a>
+           		 </li>
+				<li>
+            		<a href="{% url 'main:administration' %}">Администрация</a>
+           		 </li>
         </ul>
     </nav>
 				</header>
@@ -113,42 +116,42 @@
 							{% endif %}
 							<li><a href="{% url 'news:index' %}" class="button">Последние новости</a></li>
 							</ul>
-						<span class="image featured"><img src={% static "main/images/pic01.jpg" %} alt="" /></span>
+						<span class="image fit"><img src={% static "main/images/pic01.jpg" %} alt="" /></span>
 					</section>
 
 					<section class="box special features">
 						<div class="features-row">
 							<section>
-								<span class="icon solid major fa-bolt accent2"></span>
+								<span class="icon solid major fa-bolt accent3"></span>
 								<h3>Последние новости</h3>
 
 							</section>
 							<section>
-								<span class="icon solid major fa-users accent3"></span>
+								<span class="icon solid major fa-users accent1"></span>
 								<h3>План мероприятий</h3>
 
 							</section>
 						</div>
 						<div class="features-row">
 							<section>
-								<span class="icon solid major fa-camera-retro accent4"></span>
+								<span class="icon solid major fa-map accent4"></span>
 								<h3>Расписание кружков, занятий, спортивных секций</h3>
 
 							</section>
 							<section>
-								<span class="icon solid major fa-heart accent2"></span>
+								<span class="icon solid major fa-child accent5"></span>
 								<h3>Этно - Ярмарка</h3>
 							</section>
 						</div>
 						<div class="features-row">
 							<section>
-								<span class="icon solid major fa-camera-retro accent4"></span>
+								<span class="icon solid major fa-heart accent2"></span>
 								<h3>Знакомства</h3>
 
 							</section>
 							<section>
-								<span class="icon solid major fa-heart accent2"></span>
-								<h3>Руководство</h3>
+								<span class="icon solid major fa-briefcase accent6"></span>
+								<h3>Администрация</h3>
 							</section>
 						</div>
 					</section>

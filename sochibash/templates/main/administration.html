@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+  {{ title }}
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<section class ="cards">
+  <div class = 'card'>
+    <img class="card-image" src={% static "main/images/administration/rahila.jpg" %} alt="Рахиля Таипова" style="width:100%">
+    <h3 class="card-title">Рахиля Таипова</h3>
+    <p class ="card-text">Основатель</p>
+  </div>
+    <div class = 'card no-right-margin'>
+      <img class="card-image" src={% static "main/images/administration/rahila.jpg" %} alt="Рахиля Таипова" style="width:100%">
+      <h3 class="card-title">Имя Фамилия 2</h3>
+      <p class ="card-text">Сотрудник</p>
+    </div>
+     <div class = 'card'>
+      <img class="card-image" src={% static "main/images/administration/rahila.jpg" %} alt="Рахиля Таипова" style="width:100%">
+      <h3 class="card-title">Имя Фамилия 3</h3>
+      <p class ="card-text">Сотрудник</p>
+    </div>
+     <div class = 'card no-right-margin'>
+      <img class="card-image" src={% static "main/images/administration/rahila.jpg" %} alt="Рахиля Таипова" style="width:100%">
+      <h3 class="card-title">Имя Фамилия 4</h3>
+      <p class ="card-text">Сотрудник</p>
+    </div>
+</section>
+
+{% endblock %}

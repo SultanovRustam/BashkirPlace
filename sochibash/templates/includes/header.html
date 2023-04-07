@@ -8,21 +8,21 @@
             <a href="{%url 'news:profile' user.username %}"> {{ user.username }}</a>
                 <ul>
                     <li class="nav-item">
-                    <a class="nav-link {% if view_name  == 'users:logout' %}active{% endif %}"
-                    href="{% url 'users:logout' %}">Выйти</a>
+                        <a class="nav-link {% if view_name  == 'users:logout' %}active{% endif %}"
+                        href="{% url 'users:logout' %}">Выйти</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link {% if view_name  == 'users:password_change_form' %} active {% endif %}"
-                    href="{% url 'users:password_change_form' %}">Изменить пароль</a>
+                        <a class="nav-link {% if view_name  == 'users:password_change_form' %} active {% endif %}"
+                        href="{% url 'users:password_change_form' %}">Изменить пароль</a>
                     </li>
-                    {% if user.is_staff %}
-                    <li class="nav-item">
-                    <a class="nav-link"
-                    href="{% url 'news:news_create' %}">Новая новость</a>
+                        {% if user.is_staff %}
+                        <li class="nav-item">
+                        <a class="nav-link"
+                        href="{% url 'news:news_create' %}">Новая новость</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link"
-                    href="{% url 'class:class_create' %}">Новая занятие</a>
+                        <a class="nav-link"
+                        href="{% url 'class:class_create' %}">Новая занятие</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -65,10 +65,12 @@
             </li>
             <li>
                 <a href="{% url 'class:index' %}">Расписание</a>
-
-               </li>
-                <li>
-            <a href="{% url 'main:contact' %}">Контакты</a>
+           </li>
+            <li>
+                <a href="{% url 'main:contact' %}">Контакты</a>
+            </li>
+            <li>
+                <a href="{% url 'main:administration' %}">Администрация</a>
             </li>
         </ul>
     </nav>

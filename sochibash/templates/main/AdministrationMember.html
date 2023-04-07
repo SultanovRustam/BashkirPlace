@@ -1,0 +1,13 @@
+{% load static %}
+{% load thumbnail %}
+<a class="team-link" href="https://127.0.0.1">
+    <picture class="team-picture">
+        {% thumbnail i.image "288x280" quality=100 as im %}
+            <img class="team-img" loading="lazy" src={{ im.url }}  alt={{ i.fio }}>
+        {% endthumbnail %}
+    </picture>
+    <div class="team-desc">
+        <div class="team-name">{{ i.fio }}</div>
+        <div class="team-sub">{{ i.job_title }}</div>
+    </div>
+</a>

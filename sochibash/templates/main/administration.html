@@ -4,28 +4,17 @@
 {% endblock %}
 {% block content %}
 {% load static %}
+<link href="{% static 'main/assets/css/grid.css' %}" rel="stylesheet">
+<main class="team-main">
+    <h2 align="center">Администрация</h2>
+ <section class="team-index">
+    {% for i in page_obj %}
+      {% include 'main/AdministrationMember.html' with page='index_page' %}
+    {% endfor %}
+    {% include 'news/includes/paginator.html' %}
+    </section>
 
-<section class ="cards">
-  <div class = 'card'>
-    <img class="card-image" src={% static "main/images/administration/rahila.jpg" %} alt="Рахиля Таипова" style="width:100%">
-    <h3 class="card-title">Рахиля Таипова</h3>
-    <p class ="card-text">Основатель</p>
-  </div>
-    <div class = 'card no-right-margin'>
-      <img class="card-image" src={% static "main/images/administration/rahila.jpg" %} alt="Рахиля Таипова" style="width:100%">
-      <h3 class="card-title">Имя Фамилия 2</h3>
-      <p class ="card-text">Сотрудник</p>
-    </div>
-     <div class = 'card'>
-      <img class="card-image" src={% static "main/images/administration/rahila.jpg" %} alt="Рахиля Таипова" style="width:100%">
-      <h3 class="card-title">Имя Фамилия 3</h3>
-      <p class ="card-text">Сотрудник</p>
-    </div>
-     <div class = 'card no-right-margin'>
-      <img class="card-image" src={% static "main/images/administration/rahila.jpg" %} alt="Рахиля Таипова" style="width:100%">
-      <h3 class="card-title">Имя Фамилия 4</h3>
-      <p class ="card-text">Сотрудник</p>
-    </div>
-</section>
+</main>
+
 
 {% endblock %}

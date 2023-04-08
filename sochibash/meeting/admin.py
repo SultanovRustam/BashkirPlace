@@ -1,13 +1,13 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import News
+from .models import Profile
 
 
-@admin.register(News)
-class NewsAdmin(admin.ModelAdmin):
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
     readonly_fields = ["preview"]
-    list_display = ("preview", "title", "author", "text")
+    list_display = ("preview", "fio", "age", "family_status", "children", "activity")
 
     def preview(self, obj):
         return mark_safe(f'<img src="{obj.image.url}" style="max-height: 200px;">')

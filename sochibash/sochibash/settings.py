@@ -18,8 +18,10 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
+
     'class.apps.ClassConfig',
     'core.apps.CoreConfig',
+    'etnoshop.apps.EtnoshopConfig',
     'main.apps.MainConfig',
     'meeting.apps.MeetingConfig',
     'news.apps.NewsConfig',

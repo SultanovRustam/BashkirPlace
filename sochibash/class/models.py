@@ -6,7 +6,8 @@ User = get_user_model()
 
 class Class(models.Model):
     title = models.CharField(max_length=100, verbose_name='Заголовок')
-    pub_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
+    pub_date = models.DateTimeField(auto_now_add=True,
+                                    verbose_name='Дата публикации')
     description = models.TextField("Описание занятия", blank=True)
     author = models.ForeignKey(
         User,

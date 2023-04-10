@@ -18,80 +18,78 @@
 				<header id="header" class="alt">
 					<h1><a href="{% url 'main:main' %}">Башкирская автономия</a></h1>
 					    <nav id="nav">
-        <ul>
-            {% if user.is_authenticated  %}
-            <li class="nav-item navbar-text">
-            Пользователь:
-            <a href="{%url 'news:profile' user.username %}"> {{ user.username }}</a>
-                <ul>
-                    <li class="nav-item">
-                    <a class="nav-link {% if view_name  == 'users:logout' %}active{% endif %}"
-                    href="{% url 'users:logout' %}">Выйти</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link {% if view_name  == 'users:password_change_form' %} active {% endif %}"
-                    href="{% url 'users:password_change_form' %}">Изменить пароль</a>
-                    </li>
-                    {% if user.is_staff %}
-                    <li class="nav-item">
-                    <a class="nav-link"
-                    href="{% url 'news:news_create' %}">Новая новость</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link"
-                    href="{% url 'class:class_create' %}">Новая занятие</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </li>
+							<ul>
+								{% if user.is_authenticated  %}
+								<li class="nav-item navbar-text">
+								Пользователь:
+								<a href="{%url 'news:profile' user.username %}"> {{ user.username }}</a>
+									<ul>
+										<li class="nav-item">
+										<a class="nav-link {% if view_name  == 'users:logout' %}active{% endif %}"
+										href="{% url 'users:logout' %}">Выйти</a>
+										</li>
+										<li class="nav-item">
+										<a class="nav-link {% if view_name  == 'users:password_change_form' %} active {% endif %}"
+										href="{% url 'users:password_change_form' %}">Изменить пароль</a>
+										</li>
+										{% if user.is_staff %}
+										<li class="nav-item">
+										<a class="nav-link"
+										href="{% url 'news:news_create' %}">Новая новость</a>
+										</li>
+										<li class="nav-item">
+										<a class="nav-link"
+										href="{% url 'class:class_create' %}">Новая занятие</a>
+										</li>
+										{% endif %}
+									</ul>
+								</li>
 
-            {% else %}
+								{% else %}
 
-            <li class="nav-item">
-                <a class="nav-link {% if view_name  == 'users:login' %}active{% endif %}"
-                href="{% url 'users:login' %}">Войти</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {% if view_name  == 'users:signup' %}active{% endif %}"
-                href="{% url 'users:signup' %}">Регистрация</a>
-            </li>
-            {% endif %}
-            <li>
-                <a href="#" class="icon solid fa-angle-down">Меню</a>
-            <ul>
-                <li><a href="{% url 'main:main' %}">Главная</a></li>
-                <li>
-                    <a href="{% url 'news:index' %}">Новости</a>
-                </li>
-            <li>
-                <a href="{% url 'meeting:index' %}">Знакомства</a>
-                    <ul>
-                        <li>{% if has_profile %}
-                            <a href="{% url 'meeting:profile_edit' profile_id  %}">Редактировать профиль</a>
-                            {% else %}
-                            <a href="{% url 'meeting:profile_create' %}">Создать профиль</a>
-                            {% endif %}
-                        </li>
-                        {% if has_profile %}
-                        <li>
-                            <a href="{% url 'meeting:profile_detail' profile_id %}">
-                        Профиль
-                        </a>
-                        {% endif %}
-                    </ul>
-            </li>
-            <li>
-                <a href="{% url 'class:index' %}">Расписание</a>
-
-               </li>
-                <li>
-            		<a href="{% url 'main:contact' %}">Контакты</a>
-           		 </li>
-				<li>
-            		<a href="{% url 'main:administration' %}">Администрация</a>
-           		 </li>
-        </ul>
-    </nav>
+								<li class="nav-item">
+									<a class="nav-link {% if view_name  == 'users:login' %}active{% endif %}"
+									href="{% url 'users:login' %}">Войти</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link {% if view_name  == 'users:signup' %}active{% endif %}"
+									href="{% url 'users:signup' %}">Регистрация</a>
+								</li>
+								{% endif %}
+								<li>
+									<a href="#" class="icon solid fa-angle-down">Меню</a>
+								<ul>
+									<li><a href="{% url 'main:main' %}">Главная</a></li>
+									<li>
+										<a href="{% url 'news:index' %}">Новости</a>
+									</li>
+								<li>
+									<a href="{% url 'meeting:index' %}">Знакомства</a>
+										<ul>
+											<li>{% if has_profile %}
+												<a href="{% url 'meeting:profile_edit' profile_id  %}">Редактировать профиль</a>
+												{% else %}
+												<a href="{% url 'meeting:profile_create' %}">Создать профиль</a>
+												{% endif %}
+											</li>
+											{% if has_profile %}
+											<li>
+												<a href="{% url 'meeting:profile_detail' profile_id %}">
+											Профиль
+											</a>
+											{% endif %}
+										</ul>
+								</li>
+								<li>
+									<a href="{% url 'class:index' %}">Расписание</a>
+								   </li>
+									<li>
+										<a href="{% url 'main:contact' %}">Контакты</a>
+									</li>
+									<li>
+										<a href="{% url 'main:administration' %}">Администрация</a>
+									</li>
+						</ul>
 				</header>
 
 			<!-- Banner -->
@@ -124,16 +122,12 @@
 							<section>
 								<a href="{% url 'news:index' %}">
 									<span class="icon solid major fa-bolt accent3"></span>
-								</a>
-								<a href="{% url 'news:index' %}">
 									<h3>Последние новости</h3>
 								</a>
 							</section>
 							<section>
 								<a href="{% url 'news:index' %}">
 									<span class="icon solid major fa-users accent1"></span>
-								</a>
-								<a href="{% url 'news:index' %}">
 									<h3>План мероприятий</h3>
 								</a>
 
@@ -141,33 +135,29 @@
 						</div>
 						<div class="features-row">
 							<section>
-								<a href="{% url 'class:index' %}">
+								<a href="{% url 'schedule:schedule_list' %}">
 									<span class="icon solid major fa-map accent4"></span>
-								</a>
-								<a href="{% url 'class:index' %}">
 									<h3>Расписание кружков, занятий, спортивных секций</h3>
 								</a>
 
 							</section>
 							<section>
-								<span class="icon solid major fa-child accent5"></span>
-								<h3>Этно - Ярмарка</h3>
+								<a href="{% url 'etnoshop:etnoshop' %}">
+									<span class="icon solid major fa-child accent5"></span>
+									<h3>Этно - Ярмарка</h3>
+								</a>
 							</section>
 						</div>
 						<div class="features-row">
 							<section>
 								<a href="{% url 'meeting:index' %}">
 									<span class="icon solid major fa-heart accent2"></span>
-								</a>
-								<a href="{% url 'meeting:index' %}">
 									<h3>Знакомства</h3>
 								</a>
 							</section>
 							<section>
 								<a href="{% url 'main:administration' %}">
 									<span class="icon solid major fa-briefcase accent6"></span>
-								</a>
-								<a href="{% url 'main:administration' %}">
 									<h3>Администрация</h3>
 								</a>
 							</section>

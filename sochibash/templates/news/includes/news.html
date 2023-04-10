@@ -10,7 +10,7 @@
       </li>
     </ul>
     <div align="center">
-    {% thumbnail news.image "1200x720" quality=100 as im %}
+    {% thumbnail news.image "1200x720" padding=True as im %}
       <span class="image fit"><img src="{{ im.url }}"  alt="" /></span>
     {% endthumbnail %}
     </div>

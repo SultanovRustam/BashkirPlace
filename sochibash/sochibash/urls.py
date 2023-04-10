@@ -11,6 +11,9 @@ urlpatterns = [
     path('class/', include('class.urls', namespace='class')),
     path('meeting/', include('meeting.urls', namespace='meetings')),
     path('news/', include('news.urls', namespace='news')),
+    path('schedule/', include('schedule.urls', namespace='schedule')),
+    path('shop/', include('etnoshop.urls', namespace='etnoshop')),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(

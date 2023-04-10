@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'meeting.apps.MeetingConfig',
     'news.apps.NewsConfig',
+    'schedule.apps.ScheduleConfig',
     'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -112,14 +113,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
 USE_TZ = True
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
@@ -133,6 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 NEWS_PER_PAGE = 10
 PROFILE_PER_PAGE = 10
 CLASS_PER_PAGE = 10
+SHOP_PER_PAGE = 6
 
 LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = "main:main"

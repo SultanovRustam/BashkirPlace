@@ -6,11 +6,14 @@ User = get_user_model()
 
 class Profile(models.Model):
     fio = models.CharField(max_length=100, verbose_name='ФИО')
-    pub_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
+    pub_date = models.DateTimeField(auto_now_add=True,
+                                    verbose_name='Дата публикации')
     age = models.IntegerField(verbose_name='Возраст')
-    nationality = models.CharField(max_length=100,verbose_name='Национальность')
+    nationality = models.CharField(max_length=100,
+                                   verbose_name='Национальность')
     activity = models.CharField(max_length=200, verbose_name='Дейтельность')
-    family_status = models.CharField(max_length=100, verbose_name='Семейный статус')
+    family_status = models.CharField(max_length=100,
+                                     verbose_name='Семейный статус')
     children = models.CharField(max_length=100, verbose_name='Дети')
     author = models.ForeignKey(
         User,

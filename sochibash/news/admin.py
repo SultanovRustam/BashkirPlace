@@ -10,6 +10,7 @@ class NewsAdmin(admin.ModelAdmin):
     list_display = ("preview", "title", "author", "text")
 
     def preview(self, obj):
-        return mark_safe(f'<img src="{obj.image.url}" style="max-height: 200px;">')
+        return mark_safe(
+            f'<img src="{obj.image.url}" style="max-height: 200px;">')
 
     preview.short_description = "Изображение"

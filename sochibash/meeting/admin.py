@@ -7,9 +7,11 @@ from .models import Profile
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     readonly_fields = ["preview"]
-    list_display = ("preview", "fio", "age", "family_status", "children", "activity")
+    list_display = ("preview", "fio", "age",
+                    "family_status", "children", "activity")
 
     def preview(self, obj):
-        return mark_safe(f'<img src="{obj.image.url}" style="max-height: 200px;">')
+        return mark_safe(
+            f'<img src="{obj.image.url}" style="max-height: 200px;">')
 
     preview.short_description = "Изображение"

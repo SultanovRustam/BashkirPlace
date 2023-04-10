@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block title %}
+{{ administration_member.fio|truncatechars:30 }}
+{% endblock %}
+{% block content %}
+
+  <section class="box">
+  <article>
+    <h2>{{ member.fio }}</h2>
+    <ul>
+      <li>{{ member.job_title }}</li>
+    </ul>
+    <div align="center">
+    {% thumbnail member.image "960x600" quality=100 padding=True as im %}
+      <img class="image" src="{{ im.url }}">
+    {% endthumbnail %}
+    </div>
+    <p>
+      {{ member.bio }}
+    </p>
+   </article>
+  </section>>
+{% endblock %}

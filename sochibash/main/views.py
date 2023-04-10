@@ -1,5 +1,5 @@
 from django.views.generic.base import TemplateView
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import AdministratorMember
 from .utils import paginator_page
 
@@ -31,3 +31,11 @@ def administration(request):
         'page_obj': page_obj,
     }
     return render(request, 'main/administration.html', context)
+
+
+def member_detail(request, member_id):
+    member = get_object_or_404(AdministratorMember.objects.all(), id=member_id)
+    context = {
+        'member': member,
+    }
+    return render(request, 'main/member_detail.html', context)

@@ -7,9 +7,10 @@ from .models import AdministratorMember
 @admin.register(AdministratorMember)
 class AdministratorMember(admin.ModelAdmin):
     readonly_fields = ["preview"]
-    list_display = ("preview", "fio", "job_title")
+    list_display = ("preview", "fio", "job_title", "bio")
 
     def preview(self, obj):
-        return mark_safe(f'<img src="{obj.image.url}" style="max-height: 200px">')
+        return mark_safe(
+            f'<img src="{obj.image.url}" style="max-height: 200px">')
 
     preview.short_description = "Изображение"

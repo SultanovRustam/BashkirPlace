@@ -12,6 +12,7 @@ class AdministratorMember(models.Model):
         upload_to='administrations/',
         blank=True
     )
+    bio = models.TextField(verbose_name='Краткая биография')
 
     class Meta:
         ordering = ('-fio',)

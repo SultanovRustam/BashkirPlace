@@ -7,7 +7,7 @@
         <li>Дата занятия: {{ class.event_date }}</li>
     </ul>
     <div align="center">
-    {% thumbnail class.image "1200x720" quality=100 as im %}
+    {% thumbnail class.image "1200x720" padding=True as im %}
       <span class="image fit"><img src="{{ im.url }}"  alt="" /></span>
     {% endthumbnail %}
     </div>

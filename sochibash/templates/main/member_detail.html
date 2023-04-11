@@ -12,7 +12,7 @@
       <li>{{ member.job_title }}</li>
     </ul>
     <div align="center">
-    {% thumbnail member.image "960x600" quality=100 padding=True as im %}
+    {% thumbnail member.image "960x600" quality=100  as im %}
       <span class="image fit"><img class="image" src="{{ im.url }}"></span>
     {% endthumbnail %}
 

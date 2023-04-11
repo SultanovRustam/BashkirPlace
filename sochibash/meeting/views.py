@@ -44,7 +44,7 @@ def profile_create(request):
         new_profile = form.save(commit=False)
         new_profile.author = request.user
         new_profile.save()
-        return redirect('meeting:profile', request.user)
+        return redirect('meeting:profile', request.user.pk)
     context['form'] = form
     return render(request, 'meeting/create_profile.html', context)
 
@@ -66,3 +66,12 @@ def profile_edit(request, profile_id):
         return redirect("meeting:profile_detail", profile.id)
     context["form"] = form
     return render(request, "meeting/create_profile.html", context)
+
+
+@login_required
+def profile_delete(request):
+    if request.method == 'POST':
+        profile = Profile.objects.get(author=request.user)
+        profile.delete()
+        return redirect('meeting:index')
+    return render(request, 'meeting/profile_delete.html')

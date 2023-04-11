@@ -28,11 +28,6 @@
     <p>
       {{ news.text }}
     </p>
-    {% if news.author == request.user %}
-      <a class="btn btn-primary" href="{% url 'news:news_edit' news.id %}">
-        Редактировать новость
-      </a>
-    {% endif %}
    </article>
 
 </section>

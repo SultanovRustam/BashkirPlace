@@ -54,6 +54,7 @@
         <h2 align="center">Расписание</h2>
         <div class="schedule-container">
         {% for schedule in schedules %}
+      <a href="{% url 'schedule:schedule_detail' schedule.pk %}">
         <div class="schedule-item">
         {% thumbnail schedule.image "288x280" quality=100 as im %}
             <img class="team-img" loading="lazy" src={{ im.url }}  alt={{ schedule.description }}>
@@ -64,6 +65,7 @@
         <div class="schedule-description">{{ schedule.description }}</div>
 
         </div>
+      </a>
         {% endfor %}
   ``    </div>
     </div>

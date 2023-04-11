@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% load thumbnail %}
+    <script src={% static "main/assets/js/tab.js" %}></script>
+    <script>
+
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js"></script>
     <script>
+
+
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -36,21 +43,33 @@
         });
         calendar.render();
       });
-
     </script>
 <section class="box">
-  <h2 align="center">Расписание</h2>
-  <div id='calendar'></div>
-  <div class="schedule-container">
-    {% for schedule in schedules %}
-      <div class="schedule-item">
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Schedule-Cards')" id="defaultOpen">Занятия</button>
+  <button class="tablinks" onclick="openTab(event, 'Schedule-Calendar')">Календарь</button>
+</div>
+
+    <div id="Schedule-Cards" class="tabcontent">
+        <h2 align="center">Расписание</h2>
+        <div class="schedule-container">
+        {% for schedule in schedules %}
+        <div class="schedule-item">
+        {% thumbnail schedule.image "288x280" quality=100 as im %}
+            <img class="team-img" loading="lazy" src={{ im.url }}  alt={{ schedule.description }}>
+          {% endthumbnail %}
         <div class="schedule-date">{{ schedule.date }}</div>
         <div class="schedule-time">{{ schedule.start_time }} - {{ schedule.end_time }}</div>
         <div class="schedule-title">{{ schedule.title }}</div>
         <div class="schedule-description">{{ schedule.description }}</div>
-      </div>
-    {% endfor %}
-  </div>
+
+        </div>
+        {% endfor %}
+  ``    </div>
+    </div>
+<div id="Schedule-Calendar" class="tabcontent">
+  <div id='calendar'></div>
+</div>
 </section>
 {% endblock %}-->
 

@@ -9,6 +9,11 @@ class Schedule(models.Model):
     end_time = models.TimeField(verbose_name='Окончание')
     title = models.CharField(verbose_name='Название', max_length=200)
     description = models.TextField('Описание')
+    image = models.ImageField(
+        'Картинка',
+        upload_to='schedule/',
+        blank=True
+    )
     iso_start = models.CharField(max_length=100, blank=True, null=True)
     iso_end = models.CharField(max_length=100, blank=True, null=True)
 

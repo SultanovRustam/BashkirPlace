@@ -13,8 +13,9 @@
     </ul>
     <div align="center">
     {% thumbnail member.image "960x600" quality=100 padding=True as im %}
-      <img class="image" src="{{ im.url }}">
+      <span class="image fit"><img class="image" src="{{ im.url }}"></span>
     {% endthumbnail %}
+
     </div>
     <p>
       {{ member.bio }}

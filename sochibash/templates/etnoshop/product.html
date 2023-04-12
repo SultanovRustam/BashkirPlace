@@ -2,17 +2,16 @@
 <!-- Карточка товара -->
 <div class="card">
   <div class="card__top">
-    <a href="#" class="card__image">
+    <a href="{% url 'etnoshop:product_detail' product.pk %}" class="card__image">
       <img
         src="{{ product.image.url }}"
         alt="{{ product.name }}"
       />
     </a>
-    <div class="card__label">-10%</div>
+    <!--<div class="card__label">-10%</div>-->
   </div>
   <div class="card__bottom">
     <div class="card__prices">
-      <div class="card__price card__price--discount">{{ product.price }}</div>
       <div class="card__price card__price--common">{{ product.price }}</div>
     </div>
     <a href="#" class="card__title">

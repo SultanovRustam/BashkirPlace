@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load user_filters %}
+{% load thumbnail %}
+{% block title %}
+   {{ product.name|truncatechars:30 }}
+{% endblock %}
+{% block content %}
+
+<section id="main" class="container">
+<section class="box">
+  <article>
+    <h2>{{ product.name }}</h2>
+    <ul>
+      <li>Категория: {{ product.category }}</li>
+      <li>Цена: {{ product.price }}</li>
+
+    </ul>
+    <div align="center">
+    {% thumbnail product.image "1200x720" padding=True as im %}
+      <span class="image fit"><img src="{{ im.url }}"  alt="" /></span>
+    {% endthumbnail %}
+    </div>
+    <p>
+      {{ product.description }}
+    </p>
+   </article>
+
+</section>
+</section>
+{% endblock %}

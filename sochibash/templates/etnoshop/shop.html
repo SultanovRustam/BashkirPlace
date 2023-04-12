@@ -4,12 +4,13 @@
 {% endblock %}
 {% block content %}
 {% load static %}
+<section class="box">
 <h2 align="center">Этно-Ярмарка</h2>
 <div class="cards">
     {% for product in page_obj %}
       {% include 'etnoshop/product.html' with page='index_page' %}
     {% endfor %}
     {% include 'news/includes/paginator.html' %}
-    </section>
-</div>>
+</div>
+</section>
 {% endblock %}

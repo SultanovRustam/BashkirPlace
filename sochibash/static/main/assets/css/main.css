@@ -106,7 +106,7 @@ body, input, select, textarea {
 a {
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   border-bottom: dotted 1px;
-  color: #e89980;
+  color: #000000;
   text-decoration: none;
 }
 a:hover {
@@ -3260,7 +3260,7 @@ body.landing #main {
 }
 
 .card__price--common::before {
-  content: "Обычная";
+  content: "Цена ";
   font-weight: 400;
   font-size: 13px;
   color: #bfbfbf;
@@ -3394,3 +3394,23 @@ body.landing #main {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
+footer {
+ background-image: url("../../images/footer1.jpg");
+ background-size: cover;
+ background-position: center;
+ padding:50px 0;
+ font-size: 14px;
+ }
+footer img {
+max-width: 200px;
+}
+footer h3 {
+font-size: 18px; font-weight: 700; margin-top: 0;
+}
+footer ul {
+list-style: none; padding-left: 0;
+}
+footer ul li { margin-bottom: 10px; }
+@media (max-width: 767px) { footer img { max-width: 100%; display: block; margin-bottom: 20px; }
+footer h3 { margin-top: 20px; } }

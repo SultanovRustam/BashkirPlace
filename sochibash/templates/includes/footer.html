@@ -1,7 +1,24 @@
 {% load static %}
-<footer id="footer">
-    <img src={% static "main/images/footer.png" %} width="20%" align="center"alt=""/>
-    <ul class="copyright">
-        <li>&copy;Rustaveli {{year}}</li><li><a href="http://sochibash.sytes.net">SochiBash</a></li>
-    </ul>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <img src="{% static 'main/images/footer.png' %}" alt="Башкирская автономия"> </div>
+            <div class="col-md-8 col-sm-12"> <h3>Карта сайта</h3>
+                <ul> <li><a href="{% url 'main:main' %}">Главная</a></li>
+                    <li><a href="{% url 'news:index' %}">Новости</a></li>
+                    <li><a href="{% url 'etnoshop:etnoshop' %}">Этноярмарка</a></li>
+                    <li><a href="{% url 'meeting:index' %}">Знакомства</a></li>
+                    <li><a href="{% url 'main:contact' %}">Контакты</a></li>
+                    <li><a href="{% url 'main:administration' %}">Администрация</a></li>
+                </ul>
+
+            </div>
+<div class="col-md-8 col-sm-12"> <h3>Прочая информация</h3>
+
+
+            </div>
+
+        </div>
+    </div>
 </footer>

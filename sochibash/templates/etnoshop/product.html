@@ -14,7 +14,7 @@
     <div class="card__prices">
       <div class="card__price card__price--common">{{ product.price }}</div>
     </div>
-    <a href="#" class="card__title">
+    <a href="{% url 'etnoshop:product_detail' product.pk %}" class="card__title">
       {{ product.name }}
     </a>
   </div>

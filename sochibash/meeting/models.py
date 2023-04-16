@@ -34,3 +34,31 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.fio[:30]
+
+
+class Comment(models.Model):
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='comments',
+        verbose_name='Автор комментария'
+    )
+    profile = models.ForeignKey(
+        Profile,
+        on_delete=models.CASCADE,
+        related_name='comments',
+        verbose_name='Профиль'
+    )
+    text = models.CharField(max_length=200,
+                            verbose_name='Текст комментария')
+
+    pub_date = models.DateTimeField(auto_now_add=True,
+                                    verbose_name='Дата публикации')
+
+    class Meta:
+        ordering = ('-pub_date',)
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Коментарии'
+
+        def __str__(self):
+            return self.text[:30]

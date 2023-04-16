@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 
-from .models import Profile
+from .models import Comment, Profile
 
 
 class ProfileForm(ModelForm):
@@ -15,3 +15,16 @@ class ProfileForm(ModelForm):
                   'family_status': 'Семейный статус', 'children': 'Дети'}
         fields = ("image", 'fio', 'age', 'nationality',
                   'activity', 'family_status', 'children')
+
+
+class CommentForm(ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["text"].widget.attrs[
+            "placeholder"
+        ] = "Введите какой нибудь текст комментария"
+
+    class Meta:
+        model = Comment
+        fields = ("text",)

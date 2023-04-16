@@ -9,7 +9,7 @@
     <h2 align="center">Администрация</h2>
  <section class="team-index">
     {% for i in page_obj %}
-      {% include 'main/AdministrationMember.html' with page='index_page' %}
+      {% include 'main/administration_member.html' with page='index_page' %}
     {% endfor %}
     {% include 'news/includes/paginator.html' %}
     </section>

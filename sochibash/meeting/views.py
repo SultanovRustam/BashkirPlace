@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 
-from .forms import ProfileForm
+from .forms import CommentForm, ProfileForm
 from .models import Profile
 from .utils import paginator_page
 
@@ -28,8 +28,11 @@ def profile(request, username):
 def profile_detail(request, profile_id):
     profile = get_object_or_404(Profile.objects.select_related('author'),
                                 id=profile_id)
+    comments = profile.comments.all().select_related("author")
     context = {
         'profile': profile,
+        "form": CommentForm(),
+        "comments": comments,
     }
     return render(request, 'meeting/profile_detail.html', context)
 
@@ -75,3 +78,15 @@ def profile_delete(request):
         profile.delete()
         return redirect('meeting:index')
     return render(request, 'meeting/profile_delete.html')
+
+
+@login_required
+def add_comment(request, profile_id):
+    profile = get_object_or_404(Profile, id=profile_id)
+    form = CommentForm(request.POST or None)
+    if form.is_valid():
+        comment = form.save(commit=False)
+        comment.author = request.user
+        comment.profile = profile
+        form.save()
+    return redirect('meeting:profile_detail', profile_id=profile_id)

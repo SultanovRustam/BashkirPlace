@@ -15,44 +15,51 @@
 	<body class="landing is-preload">
 		<div id="page-wrapper">
 			<!-- Header -->
-				<header id="header" class="alt">
-					<h1><a href="{% url 'main:main' %}">Башкирская автономия</a></h1>
-					    <nav id="nav">
-							<ul>
-								{% if user.is_authenticated  %}
-								<li class="nav-item navbar-text">
-								Пользователь:
-								<a href="{%url 'news:profile' user.username %}"> {{ user.username }}</a>
-									<ul>
-										<li class="nav-item">
-										<a class="nav-link {% if view_name  == 'users:logout' %}active{% endif %}"
-										href="{% url 'users:logout' %}">Выйти</a>
-										</li>
-										<li class="nav-item">
-										<a class="nav-link {% if view_name  == 'users:password_change_form' %} active {% endif %}"
-										href="{% url 'users:password_change_form' %}">Изменить пароль</a>
-										</li>
-									</ul>
-								</li>
-
-								{% else %}
-
-								<li class="nav-item">
-									<a class="nav-link {% if view_name  == 'users:login' %}active{% endif %}"
-									href="{% url 'users:login' %}">Войти</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link {% if view_name  == 'users:signup' %}active{% endif %}"
-									href="{% url 'users:signup' %}">Регистрация</a>
-								</li>
-								{% endif %}
-								<li>
-									<a href="#" class="icon solid fa-angle-down">Меню</a>
+			<header id="header" class="alt">
+				<h1>
+					<a href="{% url 'main:main' %}">Башкирская автономия</a>
+				</h1>
+					<nav id="nav">
+						<ul>
+							{% if user.is_authenticated  %}
+							<li class="nav-item navbar-text">
+							Пользователь:
+							<a href="{%url 'news:profile' user.username %}"> {{ user.username }}</a>
 								<ul>
-									<li><a href="{% url 'main:main' %}">Главная</a></li>
-									<li>
-										<a href="{% url 'news:index' %}">Новости</a>
+									<li class="nav-item">
+									<a class="nav-link {% if view_name  == 'users:logout' %}active{% endif %}"
+									href="{% url 'users:logout' %}">Выйти</a>
 									</li>
+									<li class="nav-item">
+									<a class="nav-link {% if view_name  == 'users:password_change_form' %} active {% endif %}"
+									href="{% url 'users:password_change_form' %}">Изменить пароль</a>
+									</li>
+								</ul>
+							</li>
+
+							{% else %}
+
+							<li class="nav-item">
+								<a class="nav-link {% if view_name  == 'users:login' %}active{% endif %}"
+								href="{% url 'users:login' %}">Войти</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link {% if view_name  == 'users:signup' %}active{% endif %}"
+								href="{% url 'users:signup' %}">Регистрация</a>
+							</li>
+							{% endif %}
+							<li>
+								<a href="#" class="icon solid fa-angle-down">Меню</a>
+							<ul>
+								<li>
+									<a href="{% url 'main:main' %}">Главная</a>
+								</li>
+								<li>
+									<a href="{% url 'news:index' %}">Новости</a>
+								</li>
+								<li>
+									<a href="{% url 'etnoshop:etnoshop' %}">Этно-Ярмарка</a>
+								</li>
 								<li>
 									<a href="{% url 'meeting:index' %}">Знакомства</a>
 										<ul>
@@ -65,122 +72,113 @@
 											{% if has_profile %}
 											<li>
 												<a href="{% url 'meeting:profile_detail' profile_id %}">
-											Профиль
-											</a>
+												Профиль
+												</a>
 											{% endif %}
 										</ul>
 								</li>
 								<li>
 									<a href="{% url 'schedule:schedule_list' %}">Расписание</a>
-								   </li>
-									<li>
-										<a href="{% url 'main:contact' %}">Контакты</a>
-									</li>
-									<li>
-										<a href="{% url 'main:administration' %}">Администрация</a>
-									</li>
-						</ul>
-				</header>
+							   </li>
+								<li>
+									<a href="{% url 'main:contact' %}">Контакты</a>
+								</li>
+								<li>
+									<a href="{% url 'main:administration' %}">Администрация</a>
+								</li>
 
+					</ul>
+			</header>
 			<!-- Banner -->
-				<section id="banner">
-					<!--<img src={% static "main/images/logo.jfif" %} width="200" height="200" alt="" />-->
-					<h2>Общественная организация местной национально-культурной автономии башкир города-курорта Сочи</h2>
-				</section>
+			<section id="banner">
+				<h2>Общественная организация местной национально-культурной автономии башкир города-курорта Сочи</h2>
+			</section>
 			<!-- Main -->
-				<section id="main" class="container">
-
-					<section class="box special">
-						<header class="major">
-							<h2>Добро пожаловать!
-							<br />
-							 Рәхим итегеҙ!</h2>
-							<p>Здесь вы можете узнать последние новости, расписание занятий, секций и кружков, а так же оставить найти новых друзей!</p>
-
-						</header>
-						<ul class="actions special">
-							{% if not user.is_authenticated  %}
-							<li><a href="{% url 'users:signup' %}" class="button primary">Зарегистрироваться</a></li>
-							{% endif %}
-
-							</ul>
-						<span class="image featured"><img src={% static "main/images/pic01.jpg" %} alt="" /></span>
-					</section>
-
-					<section class="box special features">
-						<div class="features-row">
-							<section>
-								<a href="{% url 'news:index' %}">
-									<span class="icon solid major fa-bolt accent3"></span>
-									<h3>Последние новости</h3>
-								</a>
-							</section>
-							<section>
-								<a href="{% url 'news:index' %}">
-									<span class="icon solid major fa-users accent1"></span>
-									<h3>План мероприятий</h3>
-								</a>
-
-							</section>
-						</div>
-						<div class="features-row">
-							<section>
-								<a href="{% url 'schedule:schedule_list' %}">
-									<span class="icon solid major fa-map accent4"></span>
-									<h3>Расписание кружков, занятий, спортивных секций</h3>
-								</a>
-
-							</section>
-							<section>
-								<a href="{% url 'etnoshop:etnoshop' %}">
-									<span class="icon solid major fa-child accent5"></span>
-									<h3>Этно - Ярмарка</h3>
-								</a>
-							</section>
-						</div>
-						<div class="features-row">
-							<section>
-								<a href="{% url 'meeting:index' %}">
-									<span class="icon solid major fa-heart accent2"></span>
-									<h3>Знакомства</h3>
-								</a>
-							</section>
-							<section>
-								<a href="{% url 'main:administration' %}">
-									<span class="icon solid major fa-briefcase accent6"></span>
-									<h3>Администрация</h3>
-								</a>
-							</section>
-						</div>
-					</section>
-
-					<div class="row">
-						<div class="col-6 col-12-narrower">
-							<section class="box special">
-								<span class="image featured"><img src={% static "main/images/pic02.jpg" %} alt="" /></span>
-								<h3>Открываем новое в привычном</h3>
-								<p></p>
-							</section>
-
-						</div>
-						<div class="col-6 col-12-narrower">
-
-							<section class="box special">
-								<span class="image featured"><img src={% static "main/images/pic03.jpg" %} alt="" /></span>
-								<h3>Объединяемся для общения</h3>
-								<p></p>
-							</section>
-
-						</div>
-					</div>
-
+			<section id="main" class="container">
+				<section class="box special">
+					<header class="major">
+						<h2>Добро пожаловать!
+						<br />
+						 Рәхим итегеҙ!</h2>
+						<p>Здесь вы можете узнать последние новости, расписание занятий, секций и кружков, а так же оставить найти новых друзей!</p>
+					</header>
+					<ul class="actions special">
+						{% if not user.is_authenticated  %}
+						<li><a href="{% url 'users:signup' %}" class="button primary">Зарегистрироваться</a></li>
+						{% endif %}
+					</ul>
+					<span class="image featured">
+						<img src={% static "main/images/pic01.jpg" %} alt="" />
+					</span>
 				</section>
 
+				<section class="box special features">
+					<div class="features-row">
+						<section>
+							<a href="{% url 'news:index' %}">
+								<span class="icon solid major fa-bolt accent3"></span>
+								<h3>Последние новости</h3>
+							</a>
+						</section>
+						<section>
+							<a href="{% url 'news:index' %}">
+								<span class="icon solid major fa-users accent1"></span>
+								<h3>План мероприятий</h3>
+							</a>
+						</section>
+					</div>
+					<div class="features-row">
+						<section>
+							<a href="{% url 'schedule:schedule_list' %}">
+								<span class="icon solid major fa-map accent4"></span>
+								<h3>Расписание кружков, занятий, спортивных секций</h3>
+							</a>
+						</section>
+						<section>
+							<a href="{% url 'etnoshop:etnoshop' %}">
+								<span class="icon solid major fa-child accent5"></span>
+								<h3>Этно - Ярмарка</h3>
+							</a>
+						</section>
+					</div>
+					<div class="features-row">
+						<section>
+							<a href="{% url 'meeting:index' %}">
+								<span class="icon solid major fa-heart accent2"></span>
+								<h3>Знакомства</h3>
+							</a>
+						</section>
+						<section>
+							<a href="{% url 'main:administration' %}">
+								<span class="icon solid major fa-briefcase accent6"></span>
+								<h3>Администрация</h3>
+							</a>
+						</section>
+					</div>
+				</section>
+				<div class="row">
+					<div class="col-6 col-12-narrower">
+						<section class="box special">
+							<span class="image featured"><img src={% static "main/images/pic02.jpg" %} alt="" /></span>
+							<h3>Открываем новое в привычном</h3>
+							<p></p>
+						</section>
+
+					</div>
+					<div class="col-6 col-12-narrower">
+
+						<section class="box special">
+							<span class="image featured"><img src={% static "main/images/pic03.jpg" %} alt="" /></span>
+							<h3>Объединяемся для общения</h3>
+							<p></p>
+						</section>
+					</div>
+				</div>
+
+			</section>
 			<!-- Footer -->
 		{% include 'includes/footer.html' %}
-
 		</div>
-
 		<!-- Scripts -->
 			<script src={% static "main/assets/js/jquery.min.js" %}></script>
 			<script src={% static "main/assets/js/jquery.dropotron.min.js" %}></script>
@@ -189,6 +187,5 @@
 			<script src={% static "main/assets/js/breakpoints.min.js" %}></script>
 			<script src={% static "main/assets/js/util.js" %}></script>
 			<script src={% static "main/assets/js/main.js" %}></script>
-
 	</body>
 </html>

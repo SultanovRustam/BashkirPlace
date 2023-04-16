@@ -3,11 +3,12 @@
   <article>
     <h2>{{ profile.fio }}</h2>
     <div align="center">
-    {% thumbnail profile.image "960x600" as im %}
-      <span class="image fit"><img src="{{ im.url }}"  alt="" /></span>
-    {% endthumbnail %}
+      <a href="{% url 'meeting:profile_detail' profile.pk %}">
+        {% thumbnail profile.image "960x600" padding=True as im %}
+          <span class="image featured"><img src="{{ im.url }}" alt="" /></span>
+        {% endthumbnail %}
+      </a>
     </div>
-    <a href="{% url 'meeting:profile_detail' profile.pk %}">подробная информация</a>
     <br>
   </article>
 </section>

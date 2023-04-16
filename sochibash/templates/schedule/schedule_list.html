@@ -4,30 +4,23 @@
 {% load thumbnail %}
 
 <section class="box">
-
-
-        <h2 align="center"><a href="{% url 'schedule:schedule_list' %}">Расписание</a>/<a href="{% url 'schedule:schedule_calendar' %}">Календарь</a></h2>
-        <div class="schedule-container">
+    <h2 align="center">
+        <a href="{% url 'schedule:schedule_list' %}">Расписание</a>/<a href="{% url 'schedule:schedule_calendar' %}">Календарь</a></h2>
+    <div class="schedule-container">
         {% for schedule in schedules %}
-
         <div class="schedule-item">
             <a href="{% url 'schedule:schedule_detail' schedule.pk %}">
         {% thumbnail schedule.image "288x280" quality=100 as im %}
             <span class="image fit"><img src="{{ im.url }}"  /></span>
           {% endthumbnail %}
-                </a>
+            </a>
         <div class="schedule-date">{{ schedule.date }}</div>
         <div class="schedule-time">{{ schedule.start_time }} - {{ schedule.end_time }}</div>
         <div class="schedule-title">{{ schedule.title }}</div>
         <div class="schedule-description">{{ schedule.description }}</div>
-
-        </div>
-
+    </div>
         {% endfor %}
-      </div>
-
-
-
+    </div>
 </section>
 {% endblock %}-->
 

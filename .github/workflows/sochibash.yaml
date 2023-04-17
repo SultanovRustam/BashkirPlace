@@ -58,7 +58,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          password: ${{ secrets.password }}
+          password: ${{ secrets.PASSWORD }}
           script: |
             sudo docker-compose down -v
             sudo docker system prune -f --all

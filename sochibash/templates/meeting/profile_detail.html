@@ -10,7 +10,7 @@
 <article>
   <h2>{{ profile.fio }}</h2>
   <div align="center">
-    {% thumbnail profile.image "960x600" quality=100 as im %}
+    {% thumbnail profile.image "480x300" quality=100 padding=True as im %}
       <span class="image fit"><img src="{{ im.url }}"  alt="" /></span>
     {% endthumbnail %}
   </div>

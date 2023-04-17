@@ -142,7 +142,7 @@ CACHES = {
     }
 }
 
-CSRF_TRUSTED_ORIGINS = ['http://158.160.55.26', 'http://sochibash.sytes.net']
+CSRF_TRUSTED_ORIGINS = ['http://194.58.102.171', 'http://башкирысочи.рф']
 CSRF_FAILURE_VIEW = 'core.views.csrf_failure'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

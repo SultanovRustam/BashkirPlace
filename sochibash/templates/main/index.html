@@ -2,7 +2,7 @@
 {% load static %}
 <html>
 	<head>
-		<title>Башкирская автономия</title>
+		<title>ОБЩЕСТВЕННАЯ ОРГАНИЗАЦИЯ МЕСТНАЯ НАЦИОНАЛЬНО-КУЛЬТУРНАЯ АВТОНОМИЯ БАШКИР ГОРОДА-КУРОРТА СОЧИ</title>
 		<meta charset="utf-8" />
 		<link rel="icon" href="{% static "fav/fav.ico" %}">
 		<link rel="icon" type="image/png" sizes="120x120" href="{% static "fav/icons8-sun-arcade-120.png" %}">
@@ -17,7 +17,7 @@
 			<!-- Header -->
 			<header id="header" class="alt">
 				<h1>
-					<a href="{% url 'main:main' %}">Башкирская автономия</a>
+					<a href="{% url 'main:main' %}">ОБЩЕСТВЕННАЯ ОРГАНИЗАЦИЯ МЕСТНАЯ НАЦИОНАЛЬНО-КУЛЬТУРНАЯ АВТОНОМИЯ БАШКИР ГОРОДА-КУРОРТА СОЧИ</a>
 				</h1>
 					<nav id="nav">
 						<ul>
@@ -91,16 +91,15 @@
 			</header>
 			<!-- Banner -->
 			<section id="banner">
-				<h2>Общественная организация местной национально-культурной автономии башкир города-курорта Сочи</h2>
+				<h2>Общественная организация местная национально-культурная автономия башкир города-курорта Сочи</h2>
 			</section>
 			<!-- Main -->
 			<section id="main" class="container">
 				<section class="box special">
 					<header class="major">
-						<h2>Добро пожаловать!
-						<br />
-						 Рәхим итегеҙ!</h2>
-						<p>Здесь вы можете узнать последние новости, расписание занятий, секций и кружков, а так же оставить найти новых друзей!</p>
+						<h2>Добро пожаловать!</h2>
+						<h2> Рәхим итегеҙ!</h2>
+						<p>Всё о башкирах в городе Сочи!</p>
 					</header>
 					<ul class="actions special">
 						{% if not user.is_authenticated  %}
@@ -156,6 +155,7 @@
 						</section>
 					</div>
 				</section>
+				<!--
 				<div class="row">
 					<div class="col-6 col-12-narrower">
 						<section class="box special">
@@ -174,7 +174,7 @@
 						</section>
 					</div>
 				</div>
-
+			-->
 			</section>
 			<!-- Footer -->
 		{% include 'includes/footer.html' %}

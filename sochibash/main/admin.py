@@ -26,6 +26,7 @@ class BannerForm(forms.ModelForm):
             'image': forms.ClearableFileInput(attrs={'class': 'file-input'}),
         }
 
+
 @admin.register(Banner)
 class BannerAdmin(admin.ModelAdmin):
     form = BannerForm
@@ -33,6 +34,8 @@ class BannerAdmin(admin.ModelAdmin):
     readonly_fields = ('image_tag',)
 
     def image_tag(self, obj):
-        return format_html('<img src="{}" style="max-width: 200px; max-height: 200px;"/>'.format(obj.image.url))
+        return format_html(
+            '<img src="{}" style="max-width: 200px;"/>'.format(obj.image.url)
+        )
 
     image_tag.short_description = 'Изображение'

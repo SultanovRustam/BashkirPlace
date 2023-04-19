@@ -12,7 +12,8 @@ class ProfileForm(ModelForm):
         labels = {'fio': 'ФИО', 'age': 'Возраст',
                   'nationality': 'Национальность',
                   'activity': 'Деятельность',
-                  'family_status': 'Семейный статус', 'children': 'Дети', 'bio': 'О себе'}
+                  'family_status': 'Семейный статус',
+                  'children': 'Дети', 'bio': 'О себе'}
         fields = ("image", 'fio', 'age', 'nationality',
                   'activity', 'family_status', 'children', 'bio')
 

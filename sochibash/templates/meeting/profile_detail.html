@@ -20,6 +20,7 @@
     <li>Семейный статус: {{ profile.family_status }}</li>
     <li>Дети: {{ profile.children }}</li>
     <li>Дейтельность: {{ profile.activity }}</li>
+    <li>О себе: {{ profile.bio }}</li>
   </ul>
 </article>
 
@@ -39,15 +40,18 @@
           </div>
         {% endif %}
 
+        {% if user.is_authenticated %}
         {% for comment in comments %}
-
+            {% if user.id == profile.author_id or user.id == comment.author_id  %}
               <h4>
-                  {{ comment.author.username }}
+                  {{ comment.author.first_name }} {{ comment.author.last }}
               </h4>
               <blockquote>
                 {{ comment.text }}
               </blockquote>
+            {% endif %}
         {% endfor %}
+        {% endif %}
 
 
 

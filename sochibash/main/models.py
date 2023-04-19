@@ -21,3 +21,10 @@ class AdministratorMember(models.Model):
 
     def __str__(self):
         return self.fio[:50]
+
+
+class Banner(models.Model):
+    image = models.ImageField(upload_to='banners')
+
+    class Meta:
+        verbose_name = 'Изображение главной страницы'

@@ -21,10 +21,10 @@ class Profile(models.Model):
         related_name='profile',
         verbose_name='Автор'
     )
+    bio = models.TextField(verbose_name='О себе')
     image = models.ImageField(
         'Фото профиля',
         upload_to='meeting/profile/',
-        blank=True
     )
 
     class Meta:

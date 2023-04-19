@@ -5,8 +5,7 @@
             {% if user.is_authenticated  %}
 
             <li class="nav-item navbar-text">
-            Пользователь:
-            <a href="{%url 'news:profile' user.username %}"> {{ user.username }}</a>
+            Пользователь: {{ user.first_name }} {{ user.last_name }}
                 <ul>
                     <li class="nav-item">
                         <a class="nav-link {% if view_name  == 'users:logout' %}active{% endif %}"

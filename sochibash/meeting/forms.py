@@ -12,9 +12,9 @@ class ProfileForm(ModelForm):
         labels = {'fio': 'ФИО', 'age': 'Возраст',
                   'nationality': 'Национальность',
                   'activity': 'Деятельность',
-                  'family_status': 'Семейный статус', 'children': 'Дети'}
+                  'family_status': 'Семейный статус', 'children': 'Дети', 'bio': 'О себе'}
         fields = ("image", 'fio', 'age', 'nationality',
-                  'activity', 'family_status', 'children')
+                  'activity', 'family_status', 'children', 'bio')
 
 
 class CommentForm(ModelForm):

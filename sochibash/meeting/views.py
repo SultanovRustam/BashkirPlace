@@ -47,7 +47,7 @@ def profile_create(request):
         new_profile = form.save(commit=False)
         new_profile.author = request.user
         new_profile.save()
-        return redirect('meeting:profile', request.user)
+        return redirect('meeting:index',)
     context['form'] = form
     return render(request, 'meeting/create_profile.html', context)
 

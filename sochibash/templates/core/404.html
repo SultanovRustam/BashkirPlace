@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-  Пароль изменён
+  Страница не найдена
 {% endblock %}
 {% block content %}
 <section id="main" class="container">
@@ -10,6 +10,8 @@
     <p>Запрашиваемая страница не найдена или была перемещена по другому адресу.</p>
 
   </header>
-  <img src={% static "main/images/404-animation-cat.gif" %}  align="center" alt=""/>
+  <span class="image fit">
+    <img src={% static "main/images/404-animation-cat.gif" %}  align="center" alt=""/>
+  </span>
 </section>
 {% endblock %}

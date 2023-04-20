@@ -5,11 +5,10 @@ from .models import Category, Product, Review
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('preview', 'name', 'price', 'category')
+    list_display = ('preview', 'name', 'category')
     list_filter = ('category',)
     search_fields = ('name', 'description')
     readonly_fields = ["preview"]
-    ordering = ('-price',)
 
     def preview(self, obj):
         return mark_safe(

@@ -85,11 +85,13 @@
 								<li>
 									<a href="{% url 'main:administration' %}">Администрация</a>
 								</li>
+							</ul>
+						</ul>
+					</nav>
 
-					</ul>
 			</header>
 			<!-- Banner -->
-			<section id="banner">
+			<section id="banner" style="background-image: url(static/main/assets/css/images/overlay.png), url({{ banner.image.url }})">
 				<h2>Общественная организация местная национально-культурная автономия башкир города-курорта Сочи</h2>
 			</section>
 			<!-- Main -->
@@ -114,13 +116,17 @@
 					<div class="features-row">
 						<section>
 							<a href="{% url 'news:index' %}">
-								<span class="icon solid major fa-bolt accent3"></span>
+								<span class="image fit">
+                					<img src="{% static 'main/images/footer.png' %}" alt="Башкирская автономия">
+								</span>
 								<h3>Последние новости</h3>
 							</a>
 						</section>
 						<section>
 							<a href="{% url 'news:index' %}">
-								<span class="icon solid major fa-users accent1"></span>
+								<span class="image fit">
+                					<img src="{% static 'main/images/footer.png' %}" alt="Башкирская автономия">
+								</span>
 								<h3>План мероприятий</h3>
 							</a>
 						</section>
@@ -128,13 +134,17 @@
 					<div class="features-row">
 						<section>
 							<a href="{% url 'schedule:schedule_list' %}">
-								<span class="icon solid major fa-map accent4"></span>
+								<span class="image fit">
+                					<img src="{% static 'main/images/footer.png' %}" alt="Башкирская автономия">
+								</span>
 								<h3>Расписание кружков, занятий, спортивных секций</h3>
 							</a>
 						</section>
 						<section>
 							<a href="{% url 'etnoshop:etnoshop' %}">
-								<span class="icon solid major fa-child accent5"></span>
+								<span class="image fit">
+                					<img src="{% static 'main/images/footer.png' %}" alt="Башкирская автономия">
+								</span>
 								<h3>Этно - Ярмарка</h3>
 							</a>
 						</section>
@@ -142,13 +152,17 @@
 					<div class="features-row">
 						<section>
 							<a href="{% url 'meeting:index' %}">
-								<span class="icon solid major fa-heart accent2"></span>
+								<span class="image fit">
+                					<img src="{% static 'main/images/footer.png' %}" alt="Башкирская автономия">
+								</span>
 								<h3>Знакомства</h3>
 							</a>
 						</section>
 						<section>
 							<a href="{% url 'main:administration' %}">
-								<span class="icon solid major fa-briefcase accent6"></span>
+								<span class="image fit">
+                					<img src="{% static 'main/images/footer.png' %}" alt="Башкирская автономия">
+								</span>
 								<h3>Администрация</h3>
 							</a>
 						</section>

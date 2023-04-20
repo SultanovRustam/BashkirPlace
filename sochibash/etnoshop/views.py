@@ -10,7 +10,7 @@ def shop(request):
         'title': 'Этно-ярмарка',
         'page_obj': page_obj,
     }
-    return render(request, 'etnoshop/shop.html', context)
+    return render(request, 'etnoshop/index.html', context)
 
 
 def product_detail(request, product_id):

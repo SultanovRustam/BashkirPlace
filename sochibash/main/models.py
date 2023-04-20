@@ -24,7 +24,24 @@ class AdministratorMember(models.Model):
 
 
 class Banner(models.Model):
-    image = models.ImageField(upload_to='banners')
+    image = models.ImageField(upload_to='banners/')
+    published = models.BooleanField(verbose_name='Опубликовано',
+                                    default=False)
+
+    def save(self, *args, **kwargs):
+        if self.published:
+            try:
+                published_banner = Banner.objects.get(published=True)
+                if self != published_banner:
+                    published_banner.published = False
+                    published_banner.save()
+            except Banner.DoesNotExist:
+                pass
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"Banner {self.id}"
 
     class Meta:
-        verbose_name = 'Изображение главной страницы'
+        verbose_name = 'Изображение для главной страницы'
+        verbose_name_plural = 'Изображения для главной страницы'

@@ -24,7 +24,11 @@ class AdministratorMember(models.Model):
 
 
 class Banner(models.Model):
-    image = models.ImageField(upload_to='banners/')
+    image = models.ImageField(
+        'Изображение',
+        upload_to='banners/',
+        blank=True
+    )
     published = models.BooleanField(verbose_name='Опубликовано',
                                     default=False)
 

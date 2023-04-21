@@ -19,7 +19,7 @@ class AdministratorMember(admin.ModelAdmin):
 @admin.register(Banner)
 class BannerAdmin(admin.ModelAdmin):
     readonly_fields = ["preview"]
-    list_display = ("preview", "published")
+    list_display = ("pk", "preview", "published")
 
     def preview(self, obj):
         return mark_safe(

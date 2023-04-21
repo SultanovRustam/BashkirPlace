@@ -60,8 +60,8 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            sudo docker-compose down -v
-            sudo docker system prune -f --all
+            sudo docker-compose stop
+            sudo docker-compose rm web -f
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env

@@ -1,5 +1,5 @@
 {% load thumbnail %}
-  <section class="box">
+<div class="inner">
   <article>
     <h2>{{ news.title }}</h2>
     <ul>
@@ -18,4 +18,4 @@
     <a href="{% url 'news:news_detail' news.pk %}">подробная информация</a>
     <br>
   </article>
-</section>
+  </div>

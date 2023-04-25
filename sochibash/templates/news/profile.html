@@ -4,13 +4,10 @@
   Профайл пользователя {{author.username}}
 {% endblock %}
 {% block content %}
-  <section id="main" class="container">
-    <header>
-        <h2>Все новости пользователя {{ author.first_name }} {{ author.last_name }}</h2>
-        <p>Всего новостей: {{ author.news.count }}</p>
-    </header>
+    <h2>Все новости пользователя {{ author.first_name }} {{ author.last_name }}</h2>
+    <p>Всего новостей: {{ author.news.count }}</p>
     {% for news in page_obj %}
-    <section class="box">
+
         <article>
             <h2>{{ news.title }}</h2>
         <ul>
@@ -29,7 +26,6 @@
         <a href="{% url 'news:news_detail' news.pk %}">подробная информация</a>
         <br>
         </article>
-    </section>
     {% if not forloop.last %}
     <hr>
     {% endif %}

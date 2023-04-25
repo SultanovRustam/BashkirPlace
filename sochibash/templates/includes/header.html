@@ -1,70 +1,42 @@
 <header id="header">
-    <h1><a href="{% url 'main:main' %}">ОБЩЕСТВЕННАЯ ОРГАНИЗАЦИЯ МЕСТНАЯ НАЦИОНАЛЬНО-КУЛЬТУРНАЯ АВТОНОМИЯ БАШКИР ГОРОДА-КУРОРТА СОЧИ</a></h1>
+    <h1><a href="{% url 'main:main' %}">Рәхим итегеҙ!</a></h1>
     <nav id="nav">
         <ul>
-            {% if user.is_authenticated  %}
-
-            <li class="nav-item navbar-text">
-            Пользователь: {{ user.first_name }} {{ user.last_name }}
-                <ul>
-                    <li class="nav-item">
-                        <a class="nav-link {% if view_name  == 'users:logout' %}active{% endif %}"
-                        href="{% url 'users:logout' %}">Выйти</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if view_name  == 'users:password_change_form' %} active {% endif %}"
-                        href="{% url 'users:password_change_form' %}">Изменить пароль</a>
-                    </li>
-                </ul>
-            </li>
-
-            {% else %}
-
-            <li class="nav-item">
-                <a class="nav-link {% if view_name  == 'users:login' %}active{% endif %}"
-                href="{% url 'users:login' %}">Войти</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {% if view_name  == 'users:signup' %}active{% endif %}"
-                href="{% url 'users:signup' %}">Регистрация</a>
-            </li>
-            {% endif %}
-            <li>
-                <a href="#" class="icon solid fa-angle-down">Меню</a>
-            <ul>
-                <li><a href="{% url 'main:main' %}">Главная</a></li>
-                <li>
-                    <a href="{% url 'news:index' %}">Новости</a>
-                </li>
-                <li>
-                    <a href="{% url 'etnoshop:etnoshop' %}">Этно-Ярмарка</a>
-                </li>
-            <li>
-                <a href="{% url 'meeting:index' %}">Знакомства</a>
+            <li class="special">
+                <a href="#menu" class="menuToggle"><span>Меню</span></a>
+                <div id="menu">
                     <ul>
-                        <li>{% if has_profile %}
-                            <a href="{% url 'meeting:profile_edit' profile_id  %}">Редактировать профиль</a>
-                            {% else %}
-                            <a href="{% url 'meeting:profile_create' %}">Создать профиль</a>
-                            {% endif %}
-                        </li>
-                        {% if has_profile %}
                         <li>
-                            <a href="{% url 'meeting:profile_detail' profile_id %}">
-                        Профиль
-                        </a>
+                            <li><h1>Меню</h1></li>
+                            <li><a href="{% url 'main:main' %}">Главная</a></li>
+                            <li><a href="{% url 'news:index' %}">Новости</a></li>
+                            <li><a href="{% url 'etnoshop:etnoshop' %}">Этно-Ярмарка</a></li>
+                            <li><a href="{% url 'meeting:index' %}">Знакомства</a>
+                            <li>{% if has_profile %}
+                                <a href="{% url 'meeting:profile_edit' profile_id  %}">Редактировать профиль</a>
+                                {% else %}
+                                <a href="{% url 'meeting:profile_create' %}">Создать профиль</a>
+                                {% endif %}
+                            </li>
+                            {% if has_profile %}
+                            <li><a href="{% url 'meeting:profile_detail' profile_id %}">Профиль</a>
+                            {% endif %}
+                            </li>
+                            <li><a href="{% url 'schedule:schedule_list' %}">Расписание</a></li>
+                            <li><a href="{% url 'main:contact' %}">Контакты</a></li>
+                            <li><a href="{% url 'main:administration' %}">Администрация</a></li>
+                        {% if user.is_authenticated  %}
+                        <li><h1>{{ user.first_name }} {{ user.last_name }}</h1></li>
+                        <li><a href="{% url 'users:logout' %}">Выйти</a></li>
+                        <li><a href="{% url 'users:password_change_form' %}">Изменить пароль</a></li>
+                        {% else %}
+                        <li><a href="{% url 'users:login' %}">Войти</a></li>
+                        <li><a href="{% url 'users:signup' %}">Регистрация</a>
+                        </li>
                         {% endif %}
                     </ul>
-            </li>
-            <li>
-                <a href="{% url 'schedule:schedule_list' %}">Расписание</a>
-           </li>
-            <li>
-                <a href="{% url 'main:contact' %}">Контакты</a>
-            </li>
-            <li>
-                <a href="{% url 'main:administration' %}">Администрация</a>
-            </li>
+        </div>
+        </li>
         </ul>
     </nav>
 </header>

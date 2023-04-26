@@ -3,21 +3,16 @@
     Удалить профиль
 {% endblock title %}
 {% block content %}
-<section id="main" class="container">
-  <header>
-
 <h2>Удаление профиля</h2>
-
 <p>Вы действительно хотите удалить свой профиль?</p>
-    </header>
-    <section class="box">
+
 <form method="post">
   {% csrf_token %}
 <div class="d-flex justify-content-end" align="center">
-  <button type="submit" class="button">Да, удалить</button>
-  <a href="{% url 'meeting:index' %}" class="button small">Отмена</a>
-    </div>
+    <ul class="actions small">
+      <button type="submit" class="button primary small">Да, удалить</button>
+      <a href="{% url 'meeting:index' %}" class="button small">Отмена</a>
+    </ul>
+</div>
 </form>
-    </section>
-    </section>
 {% endblock %}

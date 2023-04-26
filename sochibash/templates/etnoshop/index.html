@@ -4,7 +4,6 @@
 {% endblock %}
 {% block content %}
 {% load static %}
-<section class="box">
 <h2 align="center">Этно-Ярмарка</h2>
 <div class="cards">
     {% for product in page_obj %}
@@ -12,5 +11,4 @@
     {% endfor %}
     {% include 'news/includes/paginator.html' %}
 </div>
-</section>
 {% endblock %}

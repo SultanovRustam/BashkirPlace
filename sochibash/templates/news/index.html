@@ -3,12 +3,12 @@
   {{ title }}
 {% endblock %}
 {% block content %}
-    <h2 align="center"> {{title}} </h2>
-    {% for news in page_obj %}
-      {% include 'news/includes/news.html' with page='index_page' %}
-        {% if not forloop.last %}
-          <hr>
-        {% endif %}
-    {% endfor %}
-    {% include 'news/includes/paginator.html' %}
+<h2 align="center"> {{title}} </h2>
+{% for news in page_obj %}
+  {% include 'news/includes/news.html' with page='index_page' %}
+    {% if not forloop.last %}
+      <hr>
+    {% endif %}
+{% endfor %}
+{% include 'news/includes/paginator.html' %}
 {% endblock %}

@@ -5,8 +5,6 @@
   Пользователь {{ profile.FIO|truncatechars:100 }}
 {% endblock %}
 {% block content %}
-<section id="main" class="container">
-<section class="box">
 <article>
   <h2>{{ profile.fio }}</h2>
   <div align="center">
@@ -23,38 +21,33 @@
     <li>О себе: {{ profile.bio }}</li>
   </ul>
 </article>
-
-     {% if user.is_authenticated %}
-          <div class="col-12">
-            <h5 class="card-header">Добавить комментарий:</h5>
-              <div class="card-body">
-                <form method="post" action="{% url 'meeting:add_comment' profile.id %}">
-                  {% csrf_token %}
-                  <div class="form-group mb-2">
-                    {{ form.text|addclass:"form-control" }}
-                  </div>
-                  <br>
-                  <button type="submit" class="button special">Отправить</button>
-                </form>
-              </div>
+{% if user.is_authenticated %}
+  <div class="col-12">
+    <h5 class="card-header">Добавить комментарий:</h5>
+      <div class="card-body">
+        <form method="post" action="{% url 'meeting:add_comment' profile.id %}">
+          {% csrf_token %}
+          <div class="form-group mb-2">
+            {{ form.text|addclass:"form-control" }}
           </div>
-        {% endif %}
-
-        {% if user.is_authenticated %}
-        {% for comment in comments %}
-            {% if user.id == profile.author_id or user.id == comment.author_id  %}
-              <h4>
-                  {{ comment.author.first_name }} {{ comment.author.last }}
-              </h4>
-              <blockquote>
-                {{ comment.text }}
-              </blockquote>
-            {% endif %}
-        {% endfor %}
-        {% endif %}
-
-
-
-</section>
-</section>
+          <br>
+            <ul class="actions small">
+                <button type="submit" class="button primary small">Отправить</button>
+            </ul>
+        </form>
+      </div>
+  </div>
+{% endif %}
+{% if user.is_authenticated %}
+{% for comment in comments %}
+    {% if user.id == profile.author_id or user.id == comment.author_id  %}
+      <h4>
+          {{ comment.author.first_name }} {{ comment.author.last }}
+      </h4>
+      <blockquote>
+        {{ comment.text }}
+      </blockquote>
+    {% endif %}
+{% endfor %}
+{% endif %}
 {% endblock %}

@@ -4,13 +4,9 @@
   Ошибка доступа
 {% endblock %}
 {% block content %}
-<section id="main" class="container">
-  <header>
-    <h2>Ошибка доступа</h2>
-    <p>Вы запросили страницу, к которой у вас нет доступа.</p>
-  </header>
-  <span class="image fit">
-    <img src={% static "main/images/403.gif" %}  align="center" alt=""/>
-   </span>
-</section>
+<h2>Ошибка доступа</h2>
+<p>Вы запросили страницу, к которой у вас нет доступа.</p>
+<span class="image fit">
+  <img src={% static "main/images/403.gif" %}  align="center" alt=""/>
+</span>
 {% endblock %}

@@ -9,55 +9,51 @@
 {% endblock title %}
 
 {% block content %}
-<section id="main" class="container">
-  <header>
-    <h2>
-      {% if is_edit %}
-        Редактировать профиль
-      {% else %}
-        Создать профиль
-      {% endif %}
-    </h2>
-  </header>
+<h2>
+  {% if is_edit %}
+    Редактировать профиль
+  {% else %}
+    Создать профиль
+  {% endif %}
+</h2>
 
-  <section class="box">
-    <div class="card-body">
-    {% include 'includes/form_errors.html' %}
-    <form method="post" enctype="multipart/form-data" {% if action_url %} action="{% url action_url %}" {% endif %}>
-    {% csrf_token %}
-    {% load user_filters %} {# Загружаем фильтры #}
-        {% for field in form %}
-          <div class="col-6 col-12-narrower">
-            <label for="{{ field.id_for_label }}">
-              {{ field.label }}
-                {% if field.field.required %}
-                  <span class="required text-danger">*</span>
-                {% endif %}
-            </label>
-            {# К полю ввода добавляем атрибут class #}
-            {{ field|addclass:'form-control' }}
-              {% if field.help_text %}
-                <small
-                   id="{{ field.id_for_label }}-help"
-                   class="form-text text-muted"
-                >
-                  {{ field.help_text|safe }}
-                </small>
-              {% endif %}
-          </div>
-        {% endfor %}
-      <br>
-      <div class="d-flex justify-content-end">
-        <button type="submit" class="button special">
-          {% if is_edit %}
-            Сохранить
-          {% else %}
-            Добавить
+<div class="card-body">
+{% include 'includes/form_errors.html' %}
+<form method="post" enctype="multipart/form-data" {% if action_url %} action="{% url action_url %}" {% endif %}>
+{% csrf_token %}
+{% load user_filters %} {# Загружаем фильтры #}
+    {% for field in form %}
+      <div class="col-6 col-12-narrower">
+        <label for="{{ field.id_for_label }}">
+          {{ field.label }}
+            {% if field.field.required %}
+              <span class="required text-danger">*</span>
+            {% endif %}
+        </label>
+        {# К полю ввода добавляем атрибут class #}
+        {{ field|addclass:'form-control' }}
+          {% if field.help_text %}
+            <small
+               id="{{ field.id_for_label }}-help"
+               class="form-text text-muted"
+            >
+              {{ field.help_text|safe }}
+            </small>
           {% endif %}
-        </button>
       </div>
-    </form>
+    {% endfor %}
+  <br>
+  <div class="d-flex justify-content-end">
+    <ul class="actions small">
+      <button type="submit" class="button primary small">
+        {% if is_edit %}
+          Сохранить
+        {% else %}
+          Добавить
+        {% endif %}
+      </button>
+    </ul>
   </div>
-  </section>
-</section>
+</form>
+</div>
 {% endblock %}

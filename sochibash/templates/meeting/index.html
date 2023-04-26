@@ -3,14 +3,14 @@
   {{ title }}
 {% endblock %}
 {% block content %}
-<section class="box">
-    <h2 align="center"> {{title}} </h2>
-    {% for profile in page_obj %}
-      {% include 'meeting/profile.html' with page='index_page' %}
-        {% if not forloop.last %}
-          <hr>
-        {% endif %}
-    {% endfor %}
-    {% include 'news/includes/paginator.html' %}
-</section>
+
+<h2 align="center"> {{title}} </h2>
+{% for profile in page_obj %}
+  {% include 'meeting/profile.html' with page='index_page' %}
+    {% if not forloop.last %}
+      <hr>
+    {% endif %}
+{% endfor %}
+{% include 'news/includes/paginator.html' %}
+
 {% endblock %}

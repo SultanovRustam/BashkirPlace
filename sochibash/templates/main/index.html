@@ -56,9 +56,19 @@
 								<h2>Наша деятельность</h2>
 							</header>
 							<ul class="features">
+								<li class="icon fa-user">
+									<a href="{% url 'main:administration' %}">
+									<h3>Администрация</h3>
+									</a>
+								</li>
 								<li class="icon fa fa-newspaper">
 									<a href="{% url 'news:index' %}">
 									<h3>Последние новости</h3>
+									</a>
+								</li>
+								<li class="icon fa-flag">
+									<a href="{% url 'events:index' %}">
+									<h3>План мероприятий</h3>
 									</a>
 								</li>
 								<li class="icon fa-calendar">
@@ -66,24 +76,14 @@
 									<h3>Расписание кружков, занятий, спортивных секций</h3>
 									</a>
 								</li>
-								<li class="icon fa-star">
-									<a href="{% url 'etnoshop:etnoshop' %}">
-									<h3>Этно - Ярмарка</h3>
-									</a>
-								</li>
 								<li class="icon fa-heart">
 									<a href="{% url 'meeting:index' %}">
 									<h3>Знакомства</h3>
 									</a>
 								</li>
-								<li class="icon fa-user">
-									<a href="{% url 'main:administration' %}">
-									<h3>Администрация</h3>
-									</a>
-								</li>
-								<li class="icon fa-flag">
-									<a href="{% url 'events:index' %}">
-									<h3>План мероприятий</h3>
+								<li class="icon fa-star">
+									<a href="{% url 'etnoshop:etnoshop' %}">
+									<h3>Этно - Ярмарка</h3>
 									</a>
 								</li>
 							</ul>

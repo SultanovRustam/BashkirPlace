@@ -1,11 +1,11 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Class
+from .models import Event
 
 
-@admin.register(Class)
-class ClassAdmin(admin.ModelAdmin):
+@admin.register(Event)
+class EventAdmin(admin.ModelAdmin):
     readonly_fields = ["preview"]
     list_display = ("preview", "title", "author", "description", "event_date")
 

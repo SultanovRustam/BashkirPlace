@@ -47,91 +47,43 @@
 								{% endif %}
 							</ul>
 						</div>
-						<a href="#one" class="more scrolly">Узнать больше!</a>
+						<a href="#three" class="more scrolly">Узнать больше!</a>
 					</section>
-				<!-- One -->
-					<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Мы приветствуем Вас на нашем сайте</h2>
-								<p>Здесь вы можете узнать о дейтельности автономии</p>
-							</header>
-
-
-							<span class="image fit">
-                					<img src="{% static 'main/images/footer.png' %}" alt="Башкирская автономия">
-							</span>
-
-						</div>
-					</section>
-
-				<!-- Two
-					<section id="two" class="wrapper alt style2">
-						<section class="spotlight">
-							<div class="image"><img src={% static "main/images/pic01.jpg" %} alt="" /></div><div class="content">
-								<h2>Magna primis lobortis<br />
-								sed ullamcorper</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src={% static "main/images/pic02.jpg" %} alt="" /></div><div class="content">
-								<h2>Tortor dolore feugiat<br />
-								elementum magna</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src={% static "main/images/pic03.jpg" %} alt="" /></div><div class="content">
-								<h2>Augue eleifend aliquet<br />
-								sed condimentum</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-					</section>
--->
 				<!-- Three -->
 					<section id="three" class="wrapper style3 special">
 						<div class="inner">
 							<header class="major">
-								<h2>Наша дейтельность</h2>
-								<p>Нужно текстовое наполнение-описание.</p>
+								<h2>Наша деятельность</h2>
 							</header>
 							<ul class="features">
-								<li class="icon fa-paper-plane">
+								<li class="icon fa fa-newspaper">
 									<a href="{% url 'news:index' %}">
 									<h3>Последние новости</h3>
-									<p>Нужно текстовое наполнение-описание.</p>
 									</a>
 								</li>
-								<li class="icon solid fa-laptop">
+								<li class="icon fa-calendar">
 									<a href="{% url 'schedule:schedule_list' %}">
 									<h3>Расписание кружков, занятий, спортивных секций</h3>
-									<p>Нужно текстовое наполнение-описание.</p>
 									</a>
 								</li>
-								<li class="icon solid fa-code">
+								<li class="icon fa-star">
 									<a href="{% url 'etnoshop:etnoshop' %}">
 									<h3>Этно - Ярмарка</h3>
-									<p>Нужно текстовое наполнение-описание.</p>
-									</a>
-								</li>
-								<li class="icon solid fa-headphones-alt">
-									<a href="{% url 'meeting:index' %}">
-									<h3>Знакомства</h3>
-									<p>Нужно текстовое наполнение-описание.</p>
 									</a>
 								</li>
 								<li class="icon fa-heart">
+									<a href="{% url 'meeting:index' %}">
+									<h3>Знакомства</h3>
+									</a>
+								</li>
+								<li class="icon fa-user">
 									<a href="{% url 'main:administration' %}">
 									<h3>Администрация</h3>
-									<p>Нужно текстовое наполнение-описание.</p>
 									</a>
 								</li>
 								<li class="icon fa-flag">
-									<a href="{% url 'main:contact' %}">
-									<h3>Контакты</h3>
-									<p>Нужно текстовое наполнение-описание.</p>
+									<a href="{% url 'events:index' %}">
+									<h3>План мероприятий</h3>
 									</a>
 								</li>
 							</ul>
@@ -142,12 +94,15 @@
 					<section id="cta" class="wrapper style4">
 						<div class="inner">
 							<header>
-								<h2>Оставить ли этот блок</h2>
-								<p>Если да, то нужно наполнение.</p>
+								<p>Мы находимся по адресу: г. Сочи. Адлерский район, ул. Каспийская, д. 53</p>
 							</header>
-							<ul class="actions stacked">
-								<a href="#one" class="more scrolly">Перейти наверх</a>
-								<li><a href="#" class="button fit">Learn More</a></li>
+							<span class="image left">
+								<img src="{% static 'main/images/footer.png' %}" alt="Башкирская автономия">
+							</span>
+							<ul class="icons">
+								<li><a href="tel:79951898457" class="fa fa-phone">Тел. +7(995)189-84-57</a></li>
+								<li><a href="mailto:taipova86@bk.ru" class="icon solid fa-envelope">taipova86@bk.ru</a></li>
+								<li><a href="https://vk.com/bashkir.sochi" class="icon brands fa-vk">Сообщество Вконтакте</a></li>
 							</ul>
 						</div>
 					</section>

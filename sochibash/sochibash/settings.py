@@ -13,15 +13,15 @@ SECRET_KEY = os.getenv('SECRET_KEY',
                        default='django-insecure-*&k%!*rif!!#wt+=7o)oaa!w&$r^6ni)!v52_@o3s=19hp@1+h')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
 
-    'class.apps.ClassConfig',
     'core.apps.CoreConfig',
     'etnoshop.apps.EtnoshopConfig',
+    'events.apps.EventsConfig',
     'main.apps.MainConfig',
     'meeting.apps.MeetingConfig',
     'news.apps.NewsConfig',
@@ -130,7 +130,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 NEWS_PER_PAGE = 10
 PROFILE_PER_PAGE = 10
-CLASS_PER_PAGE = 10
+EVENT_PER_PAGE = 10
 SHOP_PER_PAGE = 6
 
 LOGIN_URL = 'users:login'

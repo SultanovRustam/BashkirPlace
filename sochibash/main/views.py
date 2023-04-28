@@ -21,14 +21,6 @@ class ContactView(TemplateView):
     template_name = 'main/contact.html'
 
 
-class ElementsView(TemplateView):
-    template_name = 'main/elements.html'
-
-
-class GenericView(TemplateView):
-    template_name = 'main/generic.html'
-
-
 def administration(request):
     page_obj = paginator_page(request, AdministratorMember.objects.all())
     context = {

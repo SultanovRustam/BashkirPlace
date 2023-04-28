@@ -1,0 +1,14 @@
+{% load thumbnail %}
+<article>
+  <h2>{{ event.title }}</h2>
+  <ul>
+      <li>Описание: {{ event.description }}</li>
+      <li>Дата занятия: {{ event.event_date }}</li>
+  </ul>
+  <div align="center">
+  {% thumbnail event.image "1200x720" padding=True as im %}
+    <span class="image fit"><img src="{{ im.url }}"  alt="" /></span>
+  {% endthumbnail %}
+  </div>
+  <br>
+</article>

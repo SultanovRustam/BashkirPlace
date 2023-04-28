@@ -23,6 +23,7 @@
                             {% endif %}
                             </li>
                             <li><a href="{% url 'schedule:schedule_list' %}">Расписание</a></li>
+                            <li><a href="{% url 'events:index' %}">План мероприятий</a></li>
                             <li><a href="{% url 'main:contact' %}">Контакты</a></li>
                             <li><a href="{% url 'main:administration' %}">Администрация</a></li>
                         {% if user.is_authenticated  %}

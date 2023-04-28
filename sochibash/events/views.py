@@ -11,4 +11,3 @@ def index(request):
         'page_obj': page_obj,
     }
     return render(request, 'events/index.html', context)
-

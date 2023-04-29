@@ -13,7 +13,9 @@
                             <li><a href="{% url 'news:index' %}">Новости</a></li>
                             <li><a href="{% url 'events:index' %}">План мероприятий</a></li>
                             <li><a href="{% url 'schedule:schedule_list' %}">Расписание</a></li>
+                            <li><a href="{% url 'etnoshop:etnoshop' %}">Этно-Ярмарка</a></li>
                             <li><a href="{% url 'meeting:index' %}">Знакомства</a>
+                                <ul>
                             <li>{% if has_profile %}
                                 <a href="{% url 'meeting:profile_edit' profile_id  %}">Редактировать профиль</a>
                                 {% else %}
@@ -24,7 +26,7 @@
                             <li><a href="{% url 'meeting:profile_detail' profile_id %}">Профиль</a>
                             {% endif %}
                             </li>
-                            <li><a href="{% url 'etnoshop:etnoshop' %}">Этно-Ярмарка</a></li>
+                                    </ul>
                             <li><a href="{% url 'main:contact' %}">Контакты</a></li>
                         {% if user.is_authenticated  %}
                         <li><h1>{{ user.first_name }} {{ user.last_name }}</h1></li>

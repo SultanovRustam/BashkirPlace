@@ -8,7 +8,8 @@ from .models import Comment, Profile
 class ProfileAdmin(admin.ModelAdmin):
     readonly_fields = ["preview"]
     list_display = ("preview", "fio", "age",
-                    "family_status", "children", "activity", "bio","phone_number")
+                    "family_status", "children",
+                    "activity", "bio", "phone_number")
 
     def preview(self, obj):
         return mark_safe(

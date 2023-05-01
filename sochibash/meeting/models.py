@@ -8,7 +8,7 @@ class Profile(models.Model):
     fio = models.CharField(max_length=100, verbose_name='ФИО')
     pub_date = models.DateTimeField(auto_now_add=True,
                                     verbose_name='Дата публикации')
-    age = models.IntegerField(verbose_name='Возраст')
+    age = models.CharField(max_length=5, verbose_name='Возраст')
     nationality = models.CharField(max_length=100,
                                    verbose_name='Национальность')
     activity = models.CharField(max_length=200, verbose_name='Дейтельность')
@@ -21,6 +21,7 @@ class Profile(models.Model):
         related_name='profile',
         verbose_name='Автор'
     )
+    phone_number = models.CharField(max_length=20, verbose_name='Номер телефона')
     bio = models.TextField(verbose_name='О себе')
     image = models.ImageField(
         'Фото профиля',

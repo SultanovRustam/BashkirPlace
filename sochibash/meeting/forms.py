@@ -13,9 +13,9 @@ class ProfileForm(ModelForm):
                   'nationality': 'Национальность',
                   'activity': 'Деятельность',
                   'family_status': 'Семейный статус',
-                  'children': 'Дети', 'bio': 'О себе'}
+                  'children': 'Дети', 'bio': 'О себе', 'phone_number':'Номер телефона'}
         fields = ("image", 'fio', 'age', 'nationality',
-                  'activity', 'family_status', 'children', 'bio')
+                  'activity', 'family_status', 'children', 'bio', 'phone_number')
 
 
 class CommentForm(ModelForm):

@@ -11,7 +11,7 @@ class Profile(models.Model):
     age = models.CharField(max_length=5, verbose_name='Возраст')
     nationality = models.CharField(max_length=100,
                                    verbose_name='Национальность')
-    activity = models.CharField(max_length=200, verbose_name='Дейтельность')
+    activity = models.CharField(max_length=200, verbose_name='Деятельность')
     family_status = models.CharField(max_length=100,
                                      verbose_name='Семейный статус')
     children = models.CharField(max_length=100, verbose_name='Дети')

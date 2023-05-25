@@ -16,7 +16,8 @@ class News(models.Model):
         related_name='news',
         verbose_name='Автор'
     )
-    iframe_code = models.TextField(verbose_name='Код для вставки видео')
+    iframe_code = models.TextField(verbose_name='Код для вставки видео',
+                                   blank=True)
 
     class Meta:
         ordering = ('-pub_date',)

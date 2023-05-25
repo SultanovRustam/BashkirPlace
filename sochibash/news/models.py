@@ -30,9 +30,9 @@ class News(models.Model):
 class Gallery(models.Model):
     image = models.ImageField(verbose_name='Изображение',
                               upload_to='news_gallery')
-    news = models.ForeignKey(News, on_delete=models.CASCADE, related_name='images')
+    news = models.ForeignKey(News, on_delete=models.CASCADE,
+                             related_name='images')
 
     class Meta:
         verbose_name = 'Изображение'
         verbose_name_plural = 'Изображения'
-

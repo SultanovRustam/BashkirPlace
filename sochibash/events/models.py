@@ -15,7 +15,8 @@ class Event(models.Model):
         related_name='events',
         verbose_name='Автор')
     event_date = models.DateTimeField(verbose_name="Время мероприятия")
-    iframe_code = models.TextField(verbose_name='Код для вставки видео', blank=True)
+    iframe_code = models.TextField(verbose_name='Код для вставки видео',
+                                   blank=True)
 
     class Meta:
         ordering = ('-pub_date',)
@@ -29,7 +30,8 @@ class Event(models.Model):
 class Gallery(models.Model):
     image = models.ImageField(verbose_name='Изображение',
                               upload_to='event_gallery')
-    news = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='images')
+    news = models.ForeignKey(Event, on_delete=models.CASCADE,
+                             related_name='images')
 
     class Meta:
         verbose_name = 'Изображение'

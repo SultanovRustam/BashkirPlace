@@ -17,13 +17,20 @@
     Всего новостей автора: <span> {{ news.author.news.count }} </span>
     </li>
   </ul>
-  <div align="center">
-  {% thumbnail news.image "1200x720" padding=True as im %}
-    <span class="image fit"><img src="{{ im.url }}"  alt="" /></span>
-  {% endthumbnail %}
-  </div>
+    <div class="fade">
+        {% for image in news.images.all %}
+        <div align="center">
+            {% thumbnail image.image "1340x900" format="WEBP" upscale=True as im %}
+            <span class="image fit"><img src="{{ im.url }}" alt="" /></span>
+            {% endthumbnail %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="box" align="center">{{news.iframe_code|safe}}</div>
   <p>
     {{ news.text }}
   </p>
+    <script src="https://yastatic.net/share2/share.js"></script>
+    <div class="ya-share2" data-curtain data-size="l" data-shape="round" data-services="vkontakte,odnoklassniki,telegram,whatsapp"></div>
  </article>
 {% endblock %}

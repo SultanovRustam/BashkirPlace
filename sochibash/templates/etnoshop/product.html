@@ -1,12 +1,12 @@
 {% load static %}
+{% load thumbnail %}
 <!-- Карточка товара -->
 <div class="card">
   <div class="card__top">
     <a href="{% url 'etnoshop:product_detail' product.pk %}" class="card__image">
-      <img
-        src="{{ product.image.url }}"
-        alt="{{ product.name }}"
-      />
+      {% thumbnail product.image "1340x900" format="WEBP" upscale=True as im %}
+    <img src="{{ im.url }}"  alt="im.name" />
+  {% endthumbnail %}
     </a>
     <!--<div class="card__label">-10%</div>-->
   </div>

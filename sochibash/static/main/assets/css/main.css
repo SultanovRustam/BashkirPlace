@@ -2792,14 +2792,14 @@ input, select, textarea {
 	}
 
 		.wrapper > .inner {
-			width: 60em;
+			width: 40em;
 			margin: 0 auto;
 		}
 
 			@media screen and (max-width: 1280px) {
 
 				.wrapper > .inner {
-					width: 90%;
+					width: 50%;
 				}
 
 			}
@@ -4251,7 +4251,7 @@ input, select, textarea {
     height: auto;
     object-fit: cover;
     width: 100%;
-    aspect-ratio: 288/300;
+    aspect-ratio: 11/16;
     transition: transform .2s ease;
 }
 .team-desc{

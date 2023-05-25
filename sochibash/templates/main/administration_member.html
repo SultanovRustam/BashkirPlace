@@ -2,7 +2,7 @@
 {% load thumbnail %}
 <a class="team-link" href="{% url 'main:member_detail' i.pk %}">
     <picture class="team-picture">
-        {% thumbnail i.image "288x280" quality=100 as im %}
+        {% thumbnail i.image "1340x900" format="WEBP" upscale=True as im %}
             <img class="team-img" loading="lazy" src={{ im.url }}  alt={{ i.fio }}>
         {% endthumbnail %}
     </picture>

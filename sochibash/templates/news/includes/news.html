@@ -9,13 +9,18 @@
         </a>
       </li>
     </ul>
-    <div align="center">
-    {% thumbnail news.image "1200x720" padding=True as im %}
-      <span class="image fit"><img src="{{ im.url }}"  alt="" /></span>
-    {% endthumbnail %}
-    </div>
+      {% if news.images.all %}
+        <div class="fade">
+            {% for image in news.images.all %}
+            <div align="center">
+                {% thumbnail image.image "1340x900" format="WEBP" upscale=True as im %}
+                <span class="image fit"><img src="{{ im.url }}" alt="" /></span>
+                {% endthumbnail %}
+            </div>
+            {% endfor %}
+        </div>
+      {% endif %}
     <p>{{ news.text|linebreaks }}</p>
     <a href="{% url 'news:news_detail' news.pk %}">подробная информация</a>
-    <br>
   </article>
-  </div>
+</div>

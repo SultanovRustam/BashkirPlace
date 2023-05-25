@@ -9,8 +9,7 @@ class AdministratorMember(models.Model):
     job_title = models.CharField(max_length=100, verbose_name='Должность')
     image = models.ImageField(
         'Изображение',
-        upload_to='administrations/',
-        blank=True
+        upload_to='administrations/'
     )
     bio = models.TextField(verbose_name='Краткая биография')
 

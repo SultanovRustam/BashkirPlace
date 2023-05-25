@@ -2,13 +2,18 @@
 <article>
   <h2>{{ event.title }}</h2>
   <ul>
-      <li>Описание: {{ event.description }}</li>
       <li>Дата занятия: {{ event.event_date }}</li>
+      <li>Описание: {{ event.description }}</li>
   </ul>
-  <div align="center">
-  {% thumbnail event.image "1200x720" padding=True as im %}
-    <span class="image fit"><img src="{{ im.url }}"  alt="" /></span>
-  {% endthumbnail %}
-  </div>
-  <br>
+    {% if  event.images.all %}
+    <div class="fade">
+        {% for image in event.images.all %}
+            <div align="center">
+                {% thumbnail image.image "1340x900" format="WEBP" upscale=True as im %}
+                    <span class="image fit"><img src="{{ im.url }}" alt="" /></span>
+                {% endthumbnail %}
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 </article>

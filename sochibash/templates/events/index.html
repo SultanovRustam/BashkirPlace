@@ -3,7 +3,7 @@
   {{ title }}
 {% endblock %}
 {% block content %}
-<h2> {{title}} </h2>
+<h2 align="center"> {{title}}</h2>
 {% for event in page_obj %}
   {% include 'events/event.html' with page='index_page' %}
     {% if not forloop.last %}

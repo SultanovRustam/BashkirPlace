@@ -11,7 +11,7 @@
     <li>Категория: {{ product.category }}</li>
   </ul>
   <div align="center">
-  {% thumbnail product.image "1200x720" padding=True as im %}
+  {% thumbnail product.image "1340x900" format="WEBP" upscale=True as im %}
     <span class="image fit"><img src="{{ im.url }}"  alt="" /></span>
   {% endthumbnail %}
   </div>

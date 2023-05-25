@@ -26,7 +26,9 @@
         </div>
         {% endfor %}
     </div>
-    <div class="box" align="center">{{news.iframe_code|safe}}</div>
+    {% if event.iframe_code %}
+       <div class="thumb-wrap">{{news.iframe_code|safe}}</div>
+    {% endif %}
   <p>
     {{ news.text }}
   </p>

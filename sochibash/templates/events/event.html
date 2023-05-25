@@ -5,7 +5,7 @@
       <li>Дата занятия: {{ event.event_date }}</li>
       <li>Описание: {{ event.description }}</li>
   </ul>
-    {% if  event.images.all %}
+    {% if event.images.all %}
     <div class="fade">
         {% for image in event.images.all %}
             <div align="center">
@@ -16,4 +16,7 @@
         {% endfor %}
     </div>
     {% endif %}
+{% if event.iframe_code %}
+        <div class="thumb-wrap">{{event.iframe_code|safe}}</div>
+{% endif %}
 </article>

@@ -21,7 +21,7 @@ class EventAdmin(admin.ModelAdmin):
             return format_html(
                 ''.join(['<img src="{}" width="200" height="250"/>'.format(
                     image.image.url) for image in images]))
-        else:
-            return '-'
+
+        return '-'
 
     preview.short_description = 'Превью изображений'

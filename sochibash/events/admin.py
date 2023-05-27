@@ -19,7 +19,7 @@ class EventAdmin(admin.ModelAdmin):
 
         if images:
             return format_html(
-                ''.join(['<img src="{}" width="200" height="250"/>'.format(
+                ''.join(['<img src="{}" width="100"/>'.format(
                     image.image.url) for image in images]))
 
         return '-'

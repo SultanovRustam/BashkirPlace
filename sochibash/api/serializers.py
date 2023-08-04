@@ -1,20 +1,17 @@
-import base64
-
 from news.models import Gallery, News
 from rest_framework import serializers
 
 
 class GallerySerializer(serializers.ModelSerializer):
-    image_base64 = serializers.SerializerMethodField()
+    image = serializers.SerializerMethodField()
+
+    def get_image(self, obj):
+        return self.context['request'].build_absolute_uri(
+            obj.image.url)
 
     class Meta:
         model = Gallery
-        fields = ('image', 'image_base64')
-
-    def get_image_base64(self, obj):
-        with open(obj.image.path, "rb") as image_file:
-            encoded_string = base64.b64encode(image_file.read())
-        return encoded_string.decode('utf-8')
+        fields = ('image',)
 
 
 class NewsSerializer(serializers.ModelSerializer):

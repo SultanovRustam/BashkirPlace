@@ -6,8 +6,10 @@ class GallerySerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField()
 
     def get_image(self, obj):
-        return self.context['request'].build_absolute_uri(
-            obj.image.url)
+        request = self.context.get('request')
+        if request is not None:
+            return request.build_absolute_uri(f"https://xn--80abwaizni9ce0b.xn--p1ai{obj.image.url}")
+        return obj.image.url
 
     class Meta:
         model = Gallery

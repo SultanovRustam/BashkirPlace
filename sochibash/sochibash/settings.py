@@ -18,7 +18,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
-
+    'api.apps.ApiConfig',
     'core.apps.CoreConfig',
     'etnoshop.apps.EtnoshopConfig',
     'events.apps.EventsConfig',
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sorl.thumbnail',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

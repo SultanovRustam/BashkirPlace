@@ -1,6 +1,7 @@
 import base64
+
+from news.models import Gallery, News
 from rest_framework import serializers
-from news.models import News, Gallery
 
 
 class GallerySerializer(serializers.ModelSerializer):

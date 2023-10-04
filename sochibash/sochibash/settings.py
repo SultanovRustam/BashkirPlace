@@ -143,7 +143,7 @@ CACHES = {
     }
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://194.58.102.171', 'https://xn--80abwaizni9ce0b.xn--p1ai']
+CSRF_TRUSTED_ORIGINS = ['http://45.143.93.3', 'http://bashkirisochi.ru']
 CSRF_FAILURE_VIEW = 'core.views.csrf_failure'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
